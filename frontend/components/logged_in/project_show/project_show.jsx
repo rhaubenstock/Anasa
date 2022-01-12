@@ -91,14 +91,16 @@ class ProjectShow extends React.Component{
           <div className="ProjectShow-main">
           <h3>
             { this.state.name } 
-            <Link to={`/projects/edit/${this.props.id}`}> Edit this project </Link>
+            <Link to={`/projects/edit/${this.props.id}`}> 
+              <button> Edit this project </ button>
+            </Link>
           </h3>
           {
             this.props.tasks
           }
           <h5>
             <Link to={`/projects/new`} className="team-create-submit">
-              <span>Create a New Project</span>
+              <button>Create a New Project</ button>
             </Link>
           </h5>
           </div>

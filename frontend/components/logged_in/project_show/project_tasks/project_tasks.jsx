@@ -104,7 +104,7 @@ class ProjectTasks extends React.Component{
                          
                   />
                   
-                  <p onClick={this.deleteTask(task.id)}> X </p>
+                  <button onClick={this.deleteTask(task.id)}> Delete Task </button>
                 </li>
               )
             }
