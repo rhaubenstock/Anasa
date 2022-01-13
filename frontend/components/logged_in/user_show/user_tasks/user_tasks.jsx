@@ -125,7 +125,7 @@ class UserTasks extends React.Component{
     
     return(
       <div>
-        <ul>
+        <ul className="task-list">
             {
               Object.values(this.props.tasks).map(task => 
                 <li className="deletableTask" key={task.id}>

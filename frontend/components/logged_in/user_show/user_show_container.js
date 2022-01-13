@@ -15,9 +15,11 @@ import {
 const mapStateToProps = (state, ownProps) => {
   // make use of userId param from route here
   // 
+  //debugger
   const userId = ownProps.match.params.userId;
-  const canEdit = state.entities.session.id === userId;
-  const user = state.entities.users[userId];
+  const canEdit = state.entities.session ? state.entities.session.id === userId : false;
+  
+  const user = state.entities.users ? state.entities.users[userId] : null;
 
   const name = user ? `${user.email}'s Page` : "User Profile Page";
   const tasks = user ? <UserTaskContainer id={user.id} editable={canEdit} /> : null;
@@ -33,18 +35,18 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   // add user api util, actions, reducer on frontend
   // add user controller get description on backend and make way to modify description
+  // const canEdit = state.entities.session.id === userId;
+  // if(canEdit){
   const userId = ownProps.match.params.userId;
-  const canEdit = state.entities.session.id === userId;
-  if(canEdit){
     return {
       thunkGetUser: () => dispatch(getUser(userId)),
       thunkUpdateUser: (user) => dispatch(updateUser(user)),
     };
-  } else{
-    return {
-      thunkGetUser: () => dispatch(getUser(userId))
-    }
-  }
+  // } else{
+  //   return {
+  //     thunkGetUser: () => dispatch(getUser(userId))
+  //   }
+  // }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserShow);

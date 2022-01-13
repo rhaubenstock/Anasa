@@ -18,7 +18,7 @@ import UserTasks from './user_tasks';
 
 const mapStateToProps = (state, ownProps) => {
   
-  const user = state.entities.users[ownProps.id];
+  const user = state.entities.users ? state.entities.users[ownProps.id] : null;
   const taskIds = user && user.taskIds ? user.taskIds : [];
   const prjIds = user && user.prjIds ? user.prjIds : [];
   const prjs = [];
