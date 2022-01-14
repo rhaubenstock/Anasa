@@ -17,18 +17,20 @@ const mapStateToProps = (state, ownProps) => {
   // 
   //debugger
   const userId = ownProps.match.params.userId;
-  const canEdit = state.entities.session ? state.entities.session.id === userId : false;
-  
+  const currentUserId = state.entities.session ? state.entitites.session.id : null;
+  const canEdit = currentUserId === userId;
   const user = state.entities.users ? state.entities.users[userId] : null;
 
   const name = user ? `${user.email}'s Page` : "User Profile Page";
   const tasks = user ? <UserTaskContainer id={user.id} editable={canEdit} /> : null;
+  
   return { user,
            header: <HomeHeaderContainer title="User Profile Page" />,
            sidebar: <SidebarContainer />,
            tasks,
            name,
-           canEdit
+           canEdit,
+           currentUserId
    };
 }
 

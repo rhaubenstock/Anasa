@@ -64,6 +64,7 @@ class UserShow extends React.Component{
           {this.props.header}
           <div className="UserShow-main">
             <div> No User Found </div>
+            <Link to={`$/users/${this.props.currentUserId}`}>Go to your profile</ Link>
           </div>
         </div>  
       </div>
@@ -83,7 +84,7 @@ class UserShow extends React.Component{
             />
         </div>
         {this.props.tasks}
-      <Link to={`\\users\\${1}`}>Go to your profile</ Link>
+      <Link to={`$/users/${this.props.currentUserId}`}>Go to your profile</ Link>
       </div>
     </div>
   </div>

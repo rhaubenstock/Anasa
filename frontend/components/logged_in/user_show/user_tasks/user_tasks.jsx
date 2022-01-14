@@ -131,10 +131,11 @@ class UserTasks extends React.Component{
                 <li className="deletableTask" key={task.id}>
                   <input type="text" 
                          value={this.state.tasks[task.id] ? this.state.tasks[task.id].name : ""}
-                         onChange={this.props.canEdit ? this.changeTask(task.id) : undefined}      
+                         onChange={this.props.canEdit ? this.changeTask(task.id) : undefined}
+                         readOnly={!this.props.canEdit}      
                   />
                   
-                  <p onClick={this.deleteTask(task.id)}> X </p>
+                  <button onClick={this.deleteTask(task.id)}> X </button>
                 </li>
               )
             }
