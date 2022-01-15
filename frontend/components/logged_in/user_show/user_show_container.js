@@ -38,7 +38,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   // add user controller get description on backend and make way to modify description
   // const canEdit = state.entities.session.id === userId;
   // if(canEdit){
-  const userId = ownProps.match.params.userId;
+  const userId = parseInt(ownProps.match.params.userId);
     return {
       thunkGetUser: () => dispatch(getUser(userId)),
       thunkUpdateUser: (user) => dispatch(updateUser(user)),

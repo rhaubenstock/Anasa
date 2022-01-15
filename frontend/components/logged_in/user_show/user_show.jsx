@@ -44,7 +44,9 @@ class UserShow extends React.Component{
   }
 
   componentDidUpdate(prevProps, prevState){
-    if(this.props.user && this.props.user.id !== prevProps.user.id){
+    debugger;
+    let placeholder = 1;
+    if(this.props.user && prevProps.user && this.props.user.id !== prevProps.user.id){
       this.props.thunkGetUser().then(
         payload => {
           this.setState({ 
