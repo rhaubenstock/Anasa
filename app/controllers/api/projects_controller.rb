@@ -8,8 +8,8 @@ class Api::ProjectsController < ApplicationController
 
   def show
     # add following line back in when we have redirects for who has access to what
-    #@project = current_user.projects.find_by(id: params[:id]) || Project.new
-    @project = Project.find_by(id: params[:id])
+    @project = current_user.projects.find_by(id: params[:id]) || Project.new
+    # @project = Project.find_by(id: params[:id])
     render "api/projects/show"
   end
 
