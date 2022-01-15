@@ -14,10 +14,9 @@ import {
 
 const mapStateToProps = (state, ownProps) => {
   // make use of userId param from route here
-  // 
-  //debugger
-  const userId = ownProps.match.params.userId;
-  const currentUserId = state.entities.session ? state.entitites.session.id : null;
+
+  const userId = parseInt(ownProps.match.params.userId);
+  const currentUserId = state.session ? state.session.id : null;
   const canEdit = currentUserId === userId;
   const user = state.entities.users ? state.entities.users[userId] : null;
 
