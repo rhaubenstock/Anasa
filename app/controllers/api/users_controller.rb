@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
 
   def show
     # unsafe to allow any user to find any other user, but will test for now
-    @user = User.find_by(id: params[:id]) || User.new
+    @user = current_user.teammates.find_by(id: params[:id]) || User.new
     render "api/users/show"
   end
 
