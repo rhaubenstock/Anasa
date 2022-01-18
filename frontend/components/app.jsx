@@ -19,25 +19,28 @@ import ProjectCreationFormContainer from './logged_in/project_creation/project_c
 import ProjectEditFormContainer from './logged_in/project_edit/project_edit_form_container';
 import UserShowContainer from './logged_in/user_show/user_show_container'
 
-const App = () => (
-  <Switch>
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      
-      
-      <ProtectedRoute exact path="/teams/:teamId" component={TeamShowContainer} />
-      <ProtectedRoute exact path="/projects/new" component={ProjectCreationFormContainer} />
-      <ProtectedRoute exact path="/projects/edit/:teamId" component={ProjectEditFormContainer} />
-      <ProtectedRoute exact path="/projects/:projectId" component={ProjectShowContainer} />
-      <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
-      <ProtectedRoute path="/home" component={HomeContainer} />
-      
-      {/* Splash Page */}
-      <AuthRoute exact path="/" component={SplashContainer} />
-      {/* 404 Not Found Page*/}
-      <AuthRoute component={PageNotFoundContainer} />
-  </Switch>
-);
-
+const App = () => {
+  debugger
+  let debugEnabler;
+  return (
+    <Switch>
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        
+        
+        <ProtectedRoute exact path="/teams/:teamId" component={TeamShowContainer} />
+        <ProtectedRoute exact path="/projects/new" component={ProjectCreationFormContainer} />
+        <ProtectedRoute exact path="/projects/edit/:teamId" component={ProjectEditFormContainer} />
+        <ProtectedRoute exact path="/projects/:projectId" component={ProjectShowContainer} />
+        <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
+        {/* <ProtectedRoute path="/home" component={HomeContainer} /> */}
+        
+        {/* Splash Page */}
+        <AuthRoute exact path="/" component={SplashContainer} />
+        {/* 404 Not Found Page*/}
+        <AuthRoute component={PageNotFoundContainer} />
+    </Switch>
+  );
+}
 export default App;
 

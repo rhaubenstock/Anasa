@@ -123,8 +123,10 @@ class UserTasks extends React.Component{
         <input type="submit" onClick={this.addTask}/>
       </li> );
 
-      const deleteButton = (!this.props.canEdit) ? null :  (<button onClick={this.deleteTask(task.id)}> X </button>);
-    
+      const deleteButton = (task) => {
+        return (!this.props.canEdit) ? null :  (<button onClick={this.deleteTask(task.id)}> X </button>);
+      };
+
     return(
       <div>
         <ul className="task-list">
@@ -136,7 +138,7 @@ class UserTasks extends React.Component{
                          onChange={this.props.canEdit ? this.changeTask(task.id) : undefined}
                          readOnly={!this.props.canEdit}      
                   />
-                  { deleteButton }
+                  { deleteButton(task) }
                 </li>
               )
             }
