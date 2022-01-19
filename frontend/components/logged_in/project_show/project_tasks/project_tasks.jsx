@@ -94,6 +94,7 @@ class ProjectTasks extends React.Component{
   render(){
     return(
       <div>
+        <p>Task List</p>
         <ul className="task-list">
             {
               Object.values(this.props.tasks).map(task => 

@@ -26,6 +26,8 @@ const usersReducer = (oldState = {}, action) => {
       return newState;
     case RECEIVE_TEAM:
     case RECEIVE_TEAMS:
+      // receive_team action not triggering user reducer for whatever reason? can't see 
+      // teammates on team page properly
       for(let teammateId in action.teammates){
         newState[teammateId] = Object.assign(newState[teammateId] || {}, action.teammates[teammateId]);
         newState[teammateId].taskIds = new Set();

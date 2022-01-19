@@ -20,8 +20,8 @@ import ProjectEditFormContainer from './logged_in/project_edit/project_edit_form
 import UserShowContainer from './logged_in/user_show/user_show_container'
 
 const App = () => {
-  debugger
-  let debugEnabler;
+  // debugger
+  // let debugEnabler;
   return (
     <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />

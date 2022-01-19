@@ -44,8 +44,6 @@ class UserShow extends React.Component{
   }
 
   componentDidUpdate(prevProps, prevState){
-    debugger;
-    let placeholder = 1;
     if(this.props.user && prevProps.user && this.props.user.id !== prevProps.user.id){
       this.props.thunkGetUser().then(
         payload => {
@@ -59,6 +57,11 @@ class UserShow extends React.Component{
   }
 
   render(){
+    const returnToHomeProfileLink = (this.props.canEdit) ? null : 
+    (<button>
+          <Link to={`$/users/${this.props.currentUserId}`}>Go to your profile</ Link>
+    </button>);
+
     if(!this.props.user) return (
       <div className="home-main">
         {this.props.sidebar}
@@ -66,11 +69,13 @@ class UserShow extends React.Component{
           {this.props.header}
           <div className="UserShow-main">
             <div> No User Found </div>
-            <Link to={`$/users/${this.props.currentUserId}`}>Go to your profile</ Link>
+            {returnToHomeProfileLink}
           </div>
         </div>  
       </div>
     );
+
+
     return (
     <div className="home-main">
       {this.props.sidebar}
@@ -86,7 +91,7 @@ class UserShow extends React.Component{
             />
         </div>
         {this.props.tasks}
-      <Link to={`$/users/${this.props.currentUserId}`}>Go to your profile</ Link>
+        {returnToHomeProfileLink}
       </div>
     </div>
   </div>

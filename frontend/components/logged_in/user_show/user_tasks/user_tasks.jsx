@@ -129,6 +129,7 @@ class UserTasks extends React.Component{
 
     return(
       <div>
+        <p>Task List</p>
         <ul className="task-list">
             {
               Object.values(this.props.tasks).map(task => 

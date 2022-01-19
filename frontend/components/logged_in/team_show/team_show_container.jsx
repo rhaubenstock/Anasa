@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownProps) => {
   // on teams controller
   const name = team ? team.name : "Loading Team Name...";
   const description = team ? team.description : undefined;
-  const teammates = []
+  const teammates = [];
   if(team && team.teammateIds && team.teammateIds.length > 0){
     team.teammateIds.forEach(mateId => {
       let mate = state.entities.users[mateId];
@@ -28,6 +28,7 @@ const mapStateToProps = (state, ownProps) => {
     });
   }
   // change these into links to project pages
+  debugger;
   const projects = team && team.projectIds ? team.projectIds.map(prjId => state.entities.projects[prjId] || {}) : [];
   
   return {

@@ -97,7 +97,7 @@ class TeamShow extends React.Component{
                       onChange={this.changeDescription()}
                       
                       cols="50"
-                      rows="30"
+                      rows="10"
               />
             <div className="home-member-links">
               <div>Team Members:</div>
