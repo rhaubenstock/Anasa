@@ -28,7 +28,7 @@ const mapStateToProps = (state, ownProps) => {
     });
   }
   // change these into links to project pages
-  debugger;
+  //debugger;
   const projects = team && team.projectIds ? team.projectIds.map(prjId => state.entities.projects[prjId] || {}) : [];
   
   return {

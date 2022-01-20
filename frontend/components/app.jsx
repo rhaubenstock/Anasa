@@ -36,9 +36,10 @@ const App = () => {
         {/* <ProtectedRoute path="/home" component={HomeContainer} /> */}
         
         {/* Splash Page */}
-        <AuthRoute exact path="/" component={SplashContainer} />
-        {/* 404 Not Found Page*/}
-        <AuthRoute component={PageNotFoundContainer} />
+        {/* <AuthRoute exact path="/" component={SplashContainer} /> */}
+        <AuthRoute component={SplashContainer} />
+        {/* 404 Not Found Page */}
+        {/* <AuthRoute component={PageNotFoundContainer} /> */}
     </Switch>
   );
 }

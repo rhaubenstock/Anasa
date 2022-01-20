@@ -15,8 +15,9 @@ import {
 } from "../actions/project_task_actions";
 
 const usersReducer = (oldState = {}, action) => {
+  debugger
   Object.freeze(oldState);
-  if(!action.user && !action.currentUser) return oldState;
+  //if(!action.user && !action.currentUser) return oldState;
   const newState = Object.assign({}, oldState);
   switch(action.type){
     case RECEIVE_CURRENT_USER:
@@ -26,6 +27,8 @@ const usersReducer = (oldState = {}, action) => {
       return newState;
     case RECEIVE_TEAM:
     case RECEIVE_TEAMS:
+      debugger
+      let removeTHis;
       // receive_team action not triggering user reducer for whatever reason? can't see 
       // teammates on team page properly
       for(let teammateId in action.teammates){
