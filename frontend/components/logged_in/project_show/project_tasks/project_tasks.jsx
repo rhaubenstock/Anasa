@@ -125,7 +125,7 @@ class ProjectTasks extends React.Component{
                   }
               </ select>
 
-              <input type="submit" onClick={this.addTask()}/>
+              <input type="submit" onClick={this.addTask()} value="Add Task" />
             </li>
           </ul>
           

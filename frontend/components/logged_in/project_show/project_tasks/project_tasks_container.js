@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
   const prj = state.entities.projects[ownProps.id];
   const taskIds = prj && prj.taskIds ? prj.taskIds : [];
   const tasks = {};
-  debugger
+  // debugger
   const teams = state.entities.teams;
   const teammateIds = prj && prj.team_id && teams[prj.team_id] ? teams[prj.team_id].teammateIds : [];
   const teammates = [];

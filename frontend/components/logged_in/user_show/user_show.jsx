@@ -18,7 +18,7 @@ class UserShow extends React.Component{
   changeAboutMe(){
     if(this.props.canEdit){
       return (e) => {
-        this.setState({ aboutMe: e.currentTarget.value });
+        this.setState({ aboutMe: e.currentTarget.value || "" });
         // still having an error of leaving off the last character, 
         // but debouncing should fix that, see below:
         //
@@ -36,7 +36,7 @@ class UserShow extends React.Component{
     this.props.thunkGetUser().then(
       payload => {
         this.setState({ 
-          aboutMe: payload.user.about_me, 
+          aboutMe: payload.user.about_me || "", 
           email: payload.user.email
         });
       }
@@ -48,7 +48,7 @@ class UserShow extends React.Component{
       this.props.thunkGetUser().then(
         payload => {
           this.setState({ 
-            aboutMe: payload.user.about_me, 
+            aboutMe: payload.user.about_me || "", 
             email: payload.user.email
           });
         }
@@ -88,6 +88,7 @@ class UserShow extends React.Component{
           <div>
             <textarea onChange={this.changeAboutMe()}
                       value={this.state.aboutMe}
+                      placeholder="Add a description of yourself here!"
             />
         </div>
         {this.props.tasks}

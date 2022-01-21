@@ -120,7 +120,7 @@ class UserTasks extends React.Component{
               this.props.prjs.map(prj => <option value={prj.id} key={prj.id}>{prj.name}</option>)
             }
         </ select>
-        <input type="submit" onClick={this.addTask}/>
+        <input type="submit" onClick={this.addTask} value="Add Task" />
       </li> );
 
       const deleteButton = (task) => {

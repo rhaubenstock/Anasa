@@ -100,7 +100,7 @@ class ProjectShow extends React.Component{
           }
           <h5>
             <Link to={`/projects/new`} className="team-create-submit">
-              <button>Create a New Project</ button>
+              <button>Make a New Project Page</ button>
             </Link>
           </h5>
           </div>
