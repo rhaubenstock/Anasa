@@ -16,31 +16,43 @@ import {
 
 const usersReducer = (oldState = {}, action) => {
   // debugger
+  // next work on adding receive_current_user action to task, prj, team reducers
   Object.freeze(oldState);
   //if(!action.user && !action.currentUser) return oldState;
   const newState = Object.assign({}, oldState);
   switch(action.type){
     case RECEIVE_CURRENT_USER:
+      debugger;
+      let removethis;
       newState[action.currentUser.user.id] = action.currentUser.user;
-      newState[action.currentUser.user.id].taskIds = new Set(Object.keys(action.tasks || {}));
-      newState[action.currentUser.user.id].prjIds = new Set(Object.keys(action.projects || {}));
+      newState[action.currentUser.user.id].taskIds = new Set(Object.keys(action.currentUser.tasks || {}));
+      newState[action.currentUser.user.id].prjIds = new Set(Object.keys(action.currentUser.projects || {}));
+      newState[action.currentUser.user.id].teamIds = new Set(Object.keys(action.currentUser.teams || {}));
+      
       return newState;
     case RECEIVE_TEAM:
     case RECEIVE_TEAMS:
-      // debugger
-      let removeTHis;
-      // receive_team action not triggering user reducer for whatever reason? can't see 
-      // teammates on team page properly
+      // for(let teamId in action.teams){
+      //   for(let teammateId in action.teams[teamId].teammates){
+      //     newState[teammateId] = Object.assign(newState[teammateId] || {}, action.teammates[teammateId]);
+      //     newState[teammateId].taskIds = newState[teammateId].taskIds || new Set();
+      //     newState[teammateId].prjIds = newState[teammateId].prjIds || new Set();
+      //     newState[teammateId].teamIds = newState[teammateId].teamIds || new Set();
+      //   }
+      // }
       for(let teammateId in action.teammates){
         newState[teammateId] = Object.assign(newState[teammateId] || {}, action.teammates[teammateId]);
-        newState[teammateId].taskIds = new Set();
-        newState[teammateId].prjIds = new Set();
+        newState[teammateId].taskIds = newState[teammateId].taskIds || new Set();
+        newState[teammateId].prjIds = newState[teammateId].prjIds || new Set();
+        newState[teammateId].teamIds = newState[teammateId].teamIds || new Set();
       }
       return newState;
     case RECEIVE_USER:
       newState[action.user.id] = action.user;
       newState[action.user.id].taskIds = new Set(Object.keys(action.tasks || {}));
       newState[action.user.id].prjIds = new Set(Object.keys(action.projects || {}));
+      newState[action.user.id].teamIds = new Set(Object.keys(action.teams || {}));
+
       return newState;
     case RECEIVE_PROJECT_TASKS:
     case RECEIVE_USER_TASKS:
