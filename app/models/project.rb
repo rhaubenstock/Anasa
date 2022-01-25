@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   validates :name, :owner_id, :team_id, presence: true
-  validates :name, uniqueness: { scope: :team_id }
+  # validates :name, uniqueness: { scope: :team_id }
   # validates :status, inclusion: { in: [nil, "", "On Track", "At Risk", "Off Track", "On Hold"]}
   # add validations for color and icon
   

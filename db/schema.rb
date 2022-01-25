@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_22_054121) do
+ActiveRecord::Schema.define(version: 2022_01_25_012937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2021_10_22_054121) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id"], name: "index_projects_on_owner_id"
-    t.index ["team_id", "name"], name: "index_projects_on_team_id_and_name", unique: true
   end
 
   create_table "tasks", force: :cascade do |t|
