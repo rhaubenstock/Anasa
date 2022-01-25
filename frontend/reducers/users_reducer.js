@@ -21,15 +21,14 @@ const usersReducer = (oldState = {}, action) => {
   //if(!action.user && !action.currentUser) return oldState;
   const newState = Object.assign({}, oldState);
   switch(action.type){
-    case RECEIVE_CURRENT_USER:
-      debugger;
-      let removethis;
-      newState[action.currentUser.user.id] = action.currentUser.user;
-      newState[action.currentUser.user.id].taskIds = new Set(Object.keys(action.currentUser.tasks || {}));
-      newState[action.currentUser.user.id].prjIds = new Set(Object.keys(action.currentUser.projects || {}));
-      newState[action.currentUser.user.id].teamIds = new Set(Object.keys(action.currentUser.teams || {}));
+    // case RECEIVE_CURRENT_USER:
+    
+    //   // newState[action.currentUser.user.id] = action.currentUser.user;
+    //   // newState[action.currentUser.user.id].taskIds = new Set(Object.keys(action.currentUser.tasks || {}));
+    //   // newState[action.currentUser.user.id].prjIds = new Set(Object.keys(action.currentUser.projects || {}));
+    //   // newState[action.currentUser.user.id].teamIds = new Set(Object.keys(action.currentUser.teams || {}));
       
-      return newState;
+    //   return newState;
     case RECEIVE_TEAM:
     case RECEIVE_TEAMS:
       // for(let teamId in action.teams){

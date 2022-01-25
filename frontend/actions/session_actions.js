@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/session_api_util';
+import * as UserActions from './user_actions';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
@@ -24,16 +25,21 @@ export const clearErrors = () => ({
 });
 
 
+const handleUser = (dispatch, receivedUser) => {
+  dispatch(receiveCurrentUser(receivedUser));
+  dispatch(UserActions.receiveUser(receivedUser));
+}
+
 export const signup = user => dispatch => (
 
   APIUtil.signup(user)
-  .then(receivedUser => dispatch(receiveCurrentUser(receivedUser)))
+  .then(receivedUser => handleUser(dispatch, receivedUser)) //receiveCurrentUser(receivedUser)))
   .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const login = user => dispatch => (
   APIUtil.login(user)
-  .then(receivedUser => dispatch(receiveCurrentUser(receivedUser)))
+  .then(receivedUser => handleUser(dispatch, receivedUser)) //receiveCurrentUser(receivedUser)))
   .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 

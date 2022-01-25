@@ -18,7 +18,7 @@ const projectReducer = (oldState = {}, action) => {
   let newState = Object.assign({}, oldState);
   switch(action.type){
     case RECEIVE_USER:
-    case RECEIVE_CURRENT_USER:
+    // case RECEIVE_CURRENT_USER:
     case RECEIVE_TEAM:
       //intentional fallthrough -- same functionality as RECEIVE_PROJECTS
     case RECEIVE_PROJECTS:
