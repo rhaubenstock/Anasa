@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class ProjectCreationForm extends React.Component {
   constructor(props){
     super(props);
-    this.teams = Object.values(this.props.teams);
     this.state = {
       name: '',
       team_id: this.props.id
@@ -13,14 +12,14 @@ class ProjectCreationForm extends React.Component {
   }
 
   componentDidMount(){
-    this.props.thunkGetTeams().then(
-      (res) => { 
-        this.teams = Object.values(res.teams);
-        this.setState({
-          team_id: Object.keys(res.teams)[0]
-        })
-      }
-    );
+    // this.props.thunkGetTeams().then(
+    //   (res) => { 
+    //     this.teams = Object.values(res.teams);
+    //     this.setState({
+    //       team_id: Object.keys(res.teams)[0]
+    //     })
+    //   }
+    // );
   }
 
   update(field) {
@@ -76,7 +75,7 @@ class ProjectCreationForm extends React.Component {
                         className="auth-input-field"
                 >
                   {
-                    this.teams.map(team => <option value={team.id} key={team.id}>{team.name}</option>)
+                    this.props.teams.map(team => <option value={team.id} key={team.id}>{team.name}</option>)
                   }
                 </ select>
               </div>

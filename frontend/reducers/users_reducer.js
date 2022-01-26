@@ -31,14 +31,7 @@ const usersReducer = (oldState = {}, action) => {
     //   return newState;
     case RECEIVE_TEAM:
     case RECEIVE_TEAMS:
-      // for(let teamId in action.teams){
-      //   for(let teammateId in action.teams[teamId].teammates){
-      //     newState[teammateId] = Object.assign(newState[teammateId] || {}, action.teammates[teammateId]);
-      //     newState[teammateId].taskIds = newState[teammateId].taskIds || new Set();
-      //     newState[teammateId].prjIds = newState[teammateId].prjIds || new Set();
-      //     newState[teammateId].teamIds = newState[teammateId].teamIds || new Set();
-      //   }
-      // }
+   
       for(let teammateId in action.teammates){
         newState[teammateId] = Object.assign(newState[teammateId] || {}, action.teammates[teammateId]);
         newState[teammateId].taskIds = newState[teammateId].taskIds || new Set();

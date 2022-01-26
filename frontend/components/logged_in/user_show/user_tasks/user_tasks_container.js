@@ -19,10 +19,12 @@ import UserTasks from './user_tasks';
 const mapStateToProps = (state, ownProps) => {
   
   const user = state.entities.users ? state.entities.users[ownProps.id] : null;
-  const taskIds = user && user.taskIds ? user.taskIds : [];
-  const prjIds = user && user.prjIds ? user.prjIds : [];
+  const taskIds = user ? user.taskIds : [];
+  const prjIds = user ? user.prjIds : [];
   const prjs = [];
-  prjIds.forEach(id => prjs.push(state.entities.projects[id]));
+  prjIds.forEach(id => {
+    if(state.entities.projects[id]) prjs.push(state.entities.projects[id])
+  });
   const tasks = {};
   taskIds.forEach(taskId => {
     if(state.entities.tasks[taskId]) {tasks[taskId] = state.entities.tasks[taskId]}

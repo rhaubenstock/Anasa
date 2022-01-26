@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class TeamShow extends React.Component{
   constructor(props){
     super(props);
-    this.state = { description: this.props.description || "",
+    this.state = { description: this.props.description,
                    name: this.props.name,
                    placeholder: "Loading team description..."
                  };
@@ -55,7 +55,7 @@ class TeamShow extends React.Component{
         {
           id: this.props.id,
           name: this.props.name,
-          description: this.state.description
+          description: this.state.description 
         }
       );
     }
@@ -92,7 +92,7 @@ class TeamShow extends React.Component{
             <h3>
               { this.props.name }
             </h3>
-            <textarea value={this.state.description}
+            <textarea value={this.state.description || ""}
                       placeholder="Click to add team description..."
                       onChange={this.changeDescription()}
                       

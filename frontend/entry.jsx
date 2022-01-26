@@ -10,12 +10,18 @@ import { receiveProjectTask, removeProjectTask } from './actions/project_task_ac
 
 document.addEventListener("DOMContentLoaded", ()=>{
   let store;
+
   if(window.currentUser){
-    window.currentUser = window.currentUser.user;
+    const user = window.currentUser.user;
+    user.teamIds = new Set(Object.keys(window.currentUser.teams || {}));
+    user.taskIds = new Set(Object.keys(window.currentUser.tasks || {}));
+    user.prjIds = new Set(Object.keys(window.currentUser.projects || {}));
+    
+    
     const preloadedState = {
-      session: { id: window.currentUser.id },
+      session: { id: user.id },
       entities: {
-        users: { [window.currentUser.id]: window.currentUser }
+        users: { [user.id]: user }
       }
     };
     store = configureStore(preloadedState);
