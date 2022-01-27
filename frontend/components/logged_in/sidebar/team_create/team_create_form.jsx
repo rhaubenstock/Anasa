@@ -38,6 +38,7 @@ class TeamCreateForm extends React.Component {
           <input type="submit"
                  value="Create Team"
                  className="team-create-submit"
+                 disabled={(this.name.length === 0) || null}
           />
         </form>
       </div>
