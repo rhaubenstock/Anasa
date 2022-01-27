@@ -31,6 +31,7 @@ class ProjectCreationForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const project = Object.assign({}, this.state);
+    console.log(this.state.name.length);
     this.props.thunkCreateProject(project).then(
       res => {
         this.props.history.push(`/projects/${res.project.id}`);
@@ -53,7 +54,7 @@ class ProjectCreationForm extends React.Component {
   // componentWillUnmount(){
   //   this.props.clearErrors()
   // }
-
+  
   render(){
     return (
       <div className="home-main">
@@ -82,6 +83,7 @@ class ProjectCreationForm extends React.Component {
               <input type="submit" 
                       value="Create Project"
                       className="project-create-submit"
+                      disabled={(this.state.name.length === 0) || null}
               />
             </form>
           </div>
