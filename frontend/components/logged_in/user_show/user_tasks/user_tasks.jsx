@@ -112,6 +112,7 @@ class UserTasks extends React.Component{
         <input type="text"
                value={this.state.newTaskName}
                onChange={this.update("newTaskName")}
+               disabled={(this.state.newTaskName.length === 0) || null}
         />
         <select onChange={this.update('prj_id')}
                   className="auth-input-field">
