@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+//change to functional component
 class HomeHeader extends React.Component {
   constructor(props){
     super(props);
