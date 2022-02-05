@@ -30,7 +30,7 @@ class Sidebar extends React.Component {
           keepMounted: true,
         }}
       >
-
+        {DrawerHeader}
         <div className="home-sidebar">
           <div className="home-sidebar-header">
               <Link to="/home" className="home-logo-container">
