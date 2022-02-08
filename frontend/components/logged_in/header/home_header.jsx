@@ -8,7 +8,8 @@ class HomeHeader extends React.Component {
 
   render(){
     return (
-      <AppBar position="static">
+      // from https://stackoverflow.com/questions/34550593/how-to-disable-box-shadow-globally-for-all-mui-components#:~:text=In%20the%20configuration%20object%20of,removed%20entirely%20in%20your%20application.
+      <AppBar position="static" elevation={0} >
 
         <div className="home-header">
           <div className="home-header-main">
