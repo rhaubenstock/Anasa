@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TeamCreateShowContainer from './team_create/team_create_form_container';
 import Drawer from '@material-ui/core/Typography'
+import { styled, useTheme } from '@mui/material/styles';
 
 class Sidebar extends React.Component {
   constructor(props){
@@ -14,14 +15,14 @@ class Sidebar extends React.Component {
 
   render(){
     // reference: https://mui.com/components/drawers/#PersistentDrawerRight.js
-    const DrawerHeader = styled('div')(({ theme }) => ({
-      display: 'flex',
-      alignItems: 'center',
-      padding: theme.spacing(0, 1),
-      // necessary for content to be below app bar
-      ...theme.mixins.toolbar,
-      justifyContent: 'flex-end',
-    }));
+    // const DrawerHeader = styled('div')(({ theme }) => ({
+    //   display: 'flex',
+    //   alignItems: 'center',
+    //   padding: theme.spacing(0, 1),
+    //   // necessary for content to be below app bar
+    //   ...theme.mixins.toolbar,
+    //   justifyContent: 'flex-end',
+    // }));
 
     return (
       <Drawer
@@ -30,7 +31,7 @@ class Sidebar extends React.Component {
           keepMounted: true,
         }}
       >
-        {DrawerHeader}
+        {/* {DrawerHeader} */}
         <div className="home-sidebar">
           <div className="home-sidebar-header">
               <Link to="/home" className="home-logo-container">
