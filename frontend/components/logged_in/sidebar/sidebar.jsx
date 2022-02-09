@@ -40,6 +40,12 @@ class Sidebar extends React.Component {
                 </div>
               </Link>
           </div>
+          <div className="sidebar-home-links">
+            <Link to="/home" className="home-logo-container">
+              <i class="fa-solid fa-house"></i>
+              <div>Home</div>   
+            </Link>
+          </div>
           <div className="home-sidebar-teams">
             {this.props.teams.map( team => (
               <Link to={`/teams/${team.id}`} key={team.id}>
