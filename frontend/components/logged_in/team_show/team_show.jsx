@@ -89,9 +89,7 @@ class TeamShow extends React.Component{
         <div className="page-main">
           {this.props.header}
           <div className="TeamShow-main">
-            <h3>
-              { this.props.name }
-            </h3>
+            <h5>Description</h5>
             <textarea value={this.state.description || ""}
                       placeholder="Click to add team description..."
                       onChange={this.changeDescription()}

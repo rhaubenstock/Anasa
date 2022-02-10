@@ -42,8 +42,10 @@ class Sidebar extends React.Component {
           </div>
           <div className="sidebar-home-links">
             <Link to="/home" className="home-logo-container">
-              <i class="fa-solid fa-house"></i>
-              <div>Home</div>   
+              <div className="home-link-home">
+                <i class="fa-solid fa-house"></i>
+                <div>Home</div>   
+              </div>
             </Link>
           </div>
           <div className="home-sidebar-teams">
@@ -51,11 +53,13 @@ class Sidebar extends React.Component {
             {this.props.teams.map( team => (
               <div className="sidebar-team-section">
                 <Link to={`/teams/${team.id}`} key={team.id}>
-                  <span>{team.name}</span>
+                  <div className="team-link-container">
+                    <span>{team.name}</span>
+                  </div>
                 </Link>
                 <div className="sidebar-teammate-container">
                   {/* later do teammates map or something */}
-                  {/* only list first 3 or make scrollable, don't want to break ui  */}
+                  {/* only list first 3 and make scrollable, don't want to break ui  */}
                   <ul className="sidebar-teammates">
                     <li className="sidebar-teammate">
                       <div>

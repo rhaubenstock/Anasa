@@ -33,7 +33,7 @@ const mapStateToProps = (state, ownProps) => {
   
   return {
     id: teamId,
-    header: <HomeHeaderContainer title="Team Show Page" />,
+    header: <HomeHeaderContainer title={name} />,
     sidebar: <SidebarContainer />,
     name,
     teammates,
