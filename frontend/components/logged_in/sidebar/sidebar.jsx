@@ -47,10 +47,24 @@ class Sidebar extends React.Component {
             </Link>
           </div>
           <div className="home-sidebar-teams">
+            {/* Just need teammate names and project names ?*/}
             {this.props.teams.map( team => (
-              <Link to={`/teams/${team.id}`} key={team.id}>
-                <span>{team.name}</span>
-              </Link>
+              <div className="sidebar-team-section">
+                <Link to={`/teams/${team.id}`} key={team.id}>
+                  <span>{team.name}</span>
+                </Link>
+                <div className="sidebar-teammate-container">
+                  {/* later do teammates map or something */}
+                  {/* only list first 3 or make scrollable, don't want to break ui  */}
+                  <ul className="sidebar-teammates">
+                    <li className="sidebar-teammate">
+                      <div>
+                        {/* Link to teammate page with initials and color circle here */}
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             ))}
           </div>
           <TeamCreateShowContainer />
