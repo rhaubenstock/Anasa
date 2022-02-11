@@ -82,9 +82,9 @@ class UserShow extends React.Component{
       <div className="page-main">
         {this.props.header}
         <div className="UserShow-main">
-        <h3>
+        {/* <h3>
           { this.state.email ?  `${this.state.email}'s Page` : this.props.name }
-        </h3>
+        </h3> */}
           <div>
             <textarea onChange={this.changeAboutMe()}
                       value={this.state.aboutMe}

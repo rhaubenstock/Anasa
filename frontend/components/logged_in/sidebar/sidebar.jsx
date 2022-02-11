@@ -43,7 +43,7 @@ class Sidebar extends React.Component {
           <div className="sidebar-home-links">
             <Link to="/home" className="home-logo-container">
               <div className="home-link-home">
-                <i class="fa-solid fa-house"></i>
+                <i className="fa-solid fa-house"></i>
                 <div>Home</div>   
               </div>
             </Link>

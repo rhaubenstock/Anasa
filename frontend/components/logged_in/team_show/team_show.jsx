@@ -89,46 +89,55 @@ class TeamShow extends React.Component{
         <div className="page-main">
           {this.props.header}
           <div className="TeamShow-main">
-            <h5>Description</h5>
-            <textarea value={this.state.description || ""}
-                      placeholder="Click to add team description..."
-                      onChange={this.changeDescription()}
-                      
-                      cols="50"
-                      rows="10"
-              />
-            <div className="home-member-links">
-              <div>Team Members:</div>
-              <ul>
-                {
-                  this.props.teammates.map(teammate => 
-                    <li className="link" key={teammate.id} >
-                      <Link to={`/users/${teammate.id}`} >
-                          <span>{teammate.email}</span>
-                      </Link>
-                    </li>
-                  )
-                }
-              </ul>
+            <div className="TeamShow-leftPane">
+              <h5>Description</h5>
+              <div className="description-Holder">
+                <textarea value={this.state.description || ""}
+                          placeholder="Click to add team description..."
+                          onChange={this.changeDescription()}
+                          
+                        
+                  />
+              </div>
+              <div className="home-member-links">
+                <div>Team Members:</div>
+                <ul>
+                  {
+                    this.props.teammates.map(teammate => 
+                      <li className="link" key={teammate.id} >
+                        <Link to={`/users/${teammate.id}`} >
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span>{teammate.email}</span>
+                        </Link>
+                      </li>
+                    )
+                  }
+                </ul>
+              </div>
             </div>
-            <div className="home-prj-links">
-              <div>Project Links:</div>
-              <ul>
-                {
-                  this.props.projects.map(prj => 
-                    <li className="link" key={prj.id}>
-                      <Link to={`/projects/${prj.id}`} >
-                        <span>{prj.name}</span>
-                      </Link>
-                    </li>
-                  )
-                }
-                <li className="prj-create-link">
-                  <Link to={`/projects/new`} >
-                    <span> Make a new project </ span>
-                  </Link>
-                </li>
-              </ul>
+          
+            <div className="TeamShow-rightPane">
+              <div className="home-prj-links">
+                <div>Project Links:</div>
+                <ul>
+                  {
+                    this.props.projects.map(prj => 
+                      <li className="link" key={prj.id}>
+                        <Link to={`/projects/${prj.id}`} >
+                          <i class="fa-solid fa-briefcase"></i>
+                          <span>{prj.name}</span>
+                        </Link>
+                      </li>
+                    )
+                  }
+                  <li className="prj-create-link">
+                    <Link to={`/projects/new`} >
+                      <i class="fa-regular fa-square-plus"></i>
+                      <span> Make a new project </ span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

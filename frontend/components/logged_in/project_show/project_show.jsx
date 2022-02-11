@@ -90,7 +90,7 @@ class ProjectShow extends React.Component{
           {this.props.header}
           <div className="ProjectShow-main">
           <h3>
-            { this.state.name } 
+  
             <Link to={`/projects/edit/${this.props.id}`}> 
               <button> Edit this project </ button>
             </Link>

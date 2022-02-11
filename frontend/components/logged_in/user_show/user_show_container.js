@@ -20,11 +20,11 @@ const mapStateToProps = (state, ownProps) => {
   const canEdit = currentUserId === userId;
   const user = state.entities.users ? state.entities.users[userId] : null;
 
-  const name = user ? `${user.email}'s Page` : "User Profile Page";
+  const name = user ? `${user.email}'s Page` : "Loading User";
   const tasks = user ? <UserTaskContainer id={user.id} editable={canEdit} /> : null;
   
   return { user,
-           header: <HomeHeaderContainer title="User Profile Page" />,
+           header: <HomeHeaderContainer title={name} />,
            sidebar: <SidebarContainer />,
            tasks,
            name,

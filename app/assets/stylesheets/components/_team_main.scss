@@ -1,14 +1,43 @@
+// .TeamShow-main {
+//   margin-top: 50px;
+//   margin-left: 10px;
+//   padding-left: 30px;
+
+//   width: 60%;
+//   display: flex;
+//   flex-direction: column;
+
+//   align-items: center;
+//   justify-content: space-evenly;
+// }
+
 .TeamShow-main {
-  margin-top: 50px;
-  margin-left: 10px;
-  padding-left: 30px;
-
-  width: 60%;
   display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: space-evenly;
+  flex-direction: row;
+  // align-items: center;
+  justify-content: center;
+  .TeamShow-leftPane {
+    display:flex;
+    flex-direction: column;
+    width: 258px;
+    
+    .description-Holder {
+      textarea {
+        resize: none;
+        width: 200px;
+        height: 300px;
+      }
+      
+      border: 1px grey;
+    }
+    .description-Holder:hover {
+      border: 1px red;
+    }
+  }
+  .TeamShow-rightPane{
+    display:flex;
+    flex-direction: column
+  }
 }
 
 .link span {
