@@ -90,14 +90,16 @@ class TeamShow extends React.Component{
           {this.props.header}
           <div className="TeamShow-main">
             <div className="TeamShow-leftPane">
-              <h5>Description</h5>
-              <div className="description-Holder">
-                <textarea value={this.state.description || ""}
-                          placeholder="Click to add team description..."
-                          onChange={this.changeDescription()}
+              <div className="description-holder-with-title">
+                <h5>Description</h5>
+                <div className="description-Holder">
+                  <textarea value={this.state.description || ""}
+                            placeholder="Click to add team description..."
+                            onChange={this.changeDescription()}
+                            
                           
-                        
-                  />
+                    />
+                </div>
               </div>
               <div className="home-member-links">
                 <div>Team Members:</div>
@@ -130,13 +132,13 @@ class TeamShow extends React.Component{
                       </li>
                     )
                   }
-                  <li className="prj-create-link">
-                    <Link to={`/projects/new`} >
-                      <i class="fa-regular fa-square-plus"></i>
-                      <span> Make a new project </ span>
-                    </Link>
-                  </li>
                 </ul>
+                <div className="prj-create-link">
+                  <Link to={`/projects/new`} >
+                    <i class="fa-regular fa-square-plus"></i>
+                    <span>Make a new project </ span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
