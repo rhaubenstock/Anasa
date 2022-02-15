@@ -83,6 +83,11 @@ class TeamShow extends React.Component{
         </div>  
       </div>
     );
+    const randomColor = () => {
+      const colors = ["green", "orange", "yellow", "red", "blue", "purple"]
+      return colors[Math.floor(Math.random()*colors.length)];
+    }
+
     return (
       <div className="home-main">
         {this.props.sidebar}
@@ -108,7 +113,8 @@ class TeamShow extends React.Component{
                     this.props.teammates.map(teammate => 
                       <li className="link" key={teammate.id} >
                         <Link to={`/users/${teammate.id}`} >
-                            <i class="fa-solid fa-circle-user"></i>
+                            <i className="fa-solid fa-circle-user"
+                                style={{color: randomColor()}}></i>
                             <span>{teammate.email}</span>
                         </Link>
                       </li>
@@ -126,7 +132,8 @@ class TeamShow extends React.Component{
                     this.props.projects.map(prj => 
                       <li className="link" key={prj.id}>
                         <Link to={`/projects/${prj.id}`} >
-                          <i class="fa-solid fa-briefcase"></i>
+                          <i className="fa-solid fa-briefcase"
+                             style={{color: randomColor()}}></i>
                           <span>{prj.name}</span>
                         </Link>
                       </li>
