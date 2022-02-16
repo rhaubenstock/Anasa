@@ -96,14 +96,16 @@ class TeamShow extends React.Component{
           <div className="TeamShow-main">
             <div className="TeamShow-leftPane">
               <div className="description-holder-with-title">
-                <h5>Description</h5>
+                <div className="TeamShow-description-title">
+                  <h5>Description</h5>
+
+                </div>
                 <div className="description-Holder">
                   <textarea value={this.state.description || ""}
                             placeholder="Click to add team description..."
                             onChange={this.changeDescription()}
-                            
-                          
                     />
+                  
                 </div>
               </div>
               <div className="home-member-links">
@@ -111,7 +113,7 @@ class TeamShow extends React.Component{
                 <ul>
                   {
                     this.props.teammates.map(teammate => 
-                      <li className="link" key={teammate.id} >
+                      <li className="link TeamShow-Member" key={teammate.id} >
                         <Link to={`/users/${teammate.id}`} >
                             <i className="fa-solid fa-circle-user"
                                 style={{color: randomColor()}}></i>
@@ -130,7 +132,7 @@ class TeamShow extends React.Component{
                 <ul>
                   {
                     this.props.projects.map(prj => 
-                      <li className="link" key={prj.id}>
+                      <li className="link TeamShow-Project" key={prj.id}>
                         <Link to={`/projects/${prj.id}`} >
                           <i className="fa-solid fa-briefcase"
                              style={{color: randomColor()}}></i>

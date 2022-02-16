@@ -20,18 +20,28 @@
     display:flex;
     flex-direction: column;
     width: 258px;
-    
-    .description-Holder {
-      textarea {
-        resize: none;
-        width: 200px;
-        height: 300px;
-      }
+    .description-holder-with-title{
+      // display: flex;
+      // flex-direction: column;
+      margin: 32px 0 32px;
       
-      border: 1px grey;
-    }
-    .description-Holder:hover {
-      border: 1px red;
+      .TeamShow-description-title {
+        margin: 0 24px 0 24px;
+        padding: 8px 0 8px;
+      }
+
+      .description-Holder {
+        textarea {
+          resize: none;
+          width: 200px;
+          height: 300px;
+        }
+        
+        border: 1px grey;
+      }
+      .description-Holder:hover {
+        border: 1px red;
+      }
     }
   }
   .TeamShow-rightPane{
@@ -76,13 +86,20 @@
 .home-member-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  // align-items: center;
+  // text-align: center;
+
+  .TeamShow-Member {
+    margin: 0 24px 0 24px;
+  }
 }
 
 .home-prj-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  // align-items: center;
+  // text-align: center;
+  .TeamShow-Project {
+    margin: 0 24px 0 24px;
+  }
 }
