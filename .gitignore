@@ -8,3 +8,5 @@ bundle.js.map
 /public/assets
 
 .byebug_history
+
+herokuGitError.txt
