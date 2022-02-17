@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TeamCreateShowContainer from './team_create/team_create_form_container';
-import Drawer from '@material-ui/core/Typography'
-import { styled, useTheme } from '@mui/material/styles';
+// import Drawer from '@material-ui/core/Typography'
+// import { styled, useTheme } from '@mui/material/styles';
 
 class Sidebar extends React.Component {
   constructor(props){
@@ -25,13 +25,13 @@ class Sidebar extends React.Component {
     // }));
 
     return (
-      <Drawer
-        variant="temporary"
-        ModalProps={{
-          keepMounted: true,
-        }}
-      >
-        {/* {DrawerHeader} */}
+      // <Drawer
+      //   variant="temporary"
+      //   ModalProps={{
+      //     keepMounted: true,
+      //   }}
+      // >
+        // {/* {DrawerHeader} */}
         <div className="home-sidebar">
           <div className="home-sidebar-header">
               <Link to="/home" className="home-logo-container">
@@ -73,7 +73,7 @@ class Sidebar extends React.Component {
           </div>
           <TeamCreateShowContainer />
         </div>
-      </Drawer>
+      // </Drawer>
     )
   }
 };
