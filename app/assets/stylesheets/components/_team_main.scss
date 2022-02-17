@@ -46,7 +46,9 @@
   }
   .TeamShow-rightPane{
     display:flex;
-    flex-direction: column
+    flex-direction: column;
+    margin: 32px 0;
+    padding: 8px 0;
   }
 }
 
@@ -91,6 +93,7 @@
 
   .TeamShow-Member {
     margin: 0 24px 0 24px;
+    padding: 8px 0;
   }
 }
 
@@ -99,7 +102,9 @@
   flex-direction: column;
   // align-items: center;
   // text-align: center;
-  .TeamShow-Project {
+  // .TeamShow-Project {
+  li{
     margin: 0 24px 0 24px;
+    padding: 8px 0;
   }
 }

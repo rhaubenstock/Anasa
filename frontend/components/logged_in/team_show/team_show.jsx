@@ -141,13 +141,16 @@ class TeamShow extends React.Component{
                       </li>
                     )
                   }
+                  <li>
+                    <div className="prj-create-link">
+                      <Link to={`/projects/new`} >
+                        <i class="fa-regular fa-square-plus"></i>
+                        <span>Make a new project </ span>
+                      </Link>
+                    </div>
+                  </li>
                 </ul>
-                <div className="prj-create-link">
-                  <Link to={`/projects/new`} >
-                    <i class="fa-regular fa-square-plus"></i>
-                    <span>Make a new project </ span>
-                  </Link>
-                </div>
+                
               </div>
             </div>
           </div>
