@@ -83,10 +83,10 @@ class TeamShow extends React.Component{
         </div>  
       </div>
     );
-    const randomColor = () => {
-      const colors = ["green", "orange", "yellow", "red", "blue", "purple"]
-      return colors[Math.floor(Math.random()*colors.length)];
-    }
+    // const randomColor = () => {
+    //   const colors = ["green", "orange", "yellow", "red", "blue", "purple"]
+    //   return colors[Math.floor(Math.random()*colors.length)];
+    // }
 
     return (
       <div className="home-main">
@@ -115,8 +115,8 @@ class TeamShow extends React.Component{
                     this.props.teammates.map(teammate => 
                       <li className="link TeamShow-Member" key={teammate.id} >
                         <Link to={`/users/${teammate.id}`} >
-                            <i className="fa-solid fa-circle-user"
-                                style={{color: randomColor()}}></i>
+                            <i className="fa-solid fa-circle-user fa-4x"
+                                style={{color: teammate.color}}></i>
                             <span>{teammate.email}</span>
                         </Link>
                       </li>
@@ -129,27 +129,26 @@ class TeamShow extends React.Component{
             <div className="TeamShow-rightPane">
               <div className="home-prj-links">
                 <div>Project Links:</div>
-                <ul>
+                <div className="prj-grid">
                   {
                     this.props.projects.map(prj => 
-                      <li className="link TeamShow-Project" key={prj.id}>
+                      <div className="link TeamShow-Project" key={prj.id}>
                         <Link to={`/projects/${prj.id}`} >
-                          <i className="fa-solid fa-briefcase"
-                             style={{color: randomColor()}}></i>
+                          <i className="fa-solid fa-briefcase fa-5x"
+                             style={{color: prj.color}}></i>
                           <span>{prj.name}</span>
                         </Link>
-                      </li>
+                      </div>
                     )
                   }
-                  <li>
-                    <div className="prj-create-link">
-                      <Link to={`/projects/new`} >
-                        <i class="fa-regular fa-square-plus"></i>
-                        <span>Make a new project </ span>
-                      </Link>
-                    </div>
-                  </li>
-                </ul>
+          
+                  <div className=" link prj-create-link">
+                    <Link to={`/projects/new`} >
+                      <i class="fa-regular fa-square-plus fa-5x"></i>
+                      <span>Make a new project </ span>
+                    </Link>
+                  </div>
+                </div>
                 
               </div>
             </div>

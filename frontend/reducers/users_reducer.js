@@ -20,6 +20,12 @@ const usersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   //if(!action.user && !action.currentUser) return oldState;
   const newState = Object.assign({}, oldState);
+  
+  const randomColor = () => {
+    const colors = ["green", "orange", "brown", "red", "blue", "purple"]
+    return colors[Math.floor(Math.random()*colors.length)];
+  }
+
   switch(action.type){
     // case RECEIVE_CURRENT_USER:
     
@@ -36,6 +42,7 @@ const usersReducer = (oldState = {}, action) => {
         // newState[teammateId].prjIds = newState[teammateId].prjIds || new Set();
         // newState[teammateId].teamIds = newState[teammateId].teamIds || new Set();
         newState[teammateId].teamIds.add(action.team.id);
+        newState[teammateId].color ||= randomColor();
       }
       return newState;
     case RECEIVE_TEAMS:
@@ -45,6 +52,8 @@ const usersReducer = (oldState = {}, action) => {
         newState[teammateId].taskIds = newState[teammateId].taskIds || new Set();
         newState[teammateId].prjIds = newState[teammateId].prjIds || new Set();
         newState[teammateId].teamIds = newState[teammateId].teamIds || new Set();
+        newState[teammateId].color ||= randomColor();
+
       }
       return newState;
     case RECEIVE_USER:
@@ -52,6 +61,7 @@ const usersReducer = (oldState = {}, action) => {
       newState[action.user.id].taskIds = new Set(Object.keys(action.tasks || {}));
       newState[action.user.id].prjIds = new Set(Object.keys(action.projects || {}));
       newState[action.user.id].teamIds = new Set(Object.keys(action.teams || {}));
+      newState[action.user.id].color ||= randomColor();
 
       return newState;
     case RECEIVE_PROJECT_TASKS:

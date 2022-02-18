@@ -16,6 +16,12 @@ import { RECEIVE_TEAM } from '../actions/team_actions';
 const projectReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);
+
+  const randomColor = () => {
+    const colors = ["green", "orange", "brown", "red", "blue", "purple"]
+    return colors[Math.floor(Math.random()*colors.length)];
+  }
+
   switch(action.type){
     case RECEIVE_USER:
     // case RECEIVE_CURRENT_USER:
@@ -26,6 +32,7 @@ const projectReducer = (oldState = {}, action) => {
       for (projectId in action.projects){
         newState[projectId] = Object.assign(newState[projectId] || {}, action.projects[projectId]);
         newState[projectId].taskIds = new Set();
+        newState[projectId].color ||= randomColor();
       }
       return newState;
     case RECEIVE_PROJECT:
@@ -33,6 +40,8 @@ const projectReducer = (oldState = {}, action) => {
       project.taskIds = new Set();
       if (action.tasks) Object.keys(action.tasks).forEach(id => project.taskIds.add(parseInt(id)))
       newState[action.project.id] = action.project;
+      newState[projectId].color ||= randomColor();
+
       return newState;
     case RECEIVE_PROJECT_TASK:
       newState[action.task.prj_id].taskIds.add(action.task.id);
