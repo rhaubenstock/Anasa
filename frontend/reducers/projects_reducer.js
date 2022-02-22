@@ -40,7 +40,7 @@ const projectReducer = (oldState = {}, action) => {
       project.taskIds = new Set();
       if (action.tasks) Object.keys(action.tasks).forEach(id => project.taskIds.add(parseInt(id)))
       newState[action.project.id] = action.project;
-      newState[projectId].color ||= randomColor();
+      newState[action.project.id].color ||= randomColor();
 
       return newState;
     case RECEIVE_PROJECT_TASK:

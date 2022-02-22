@@ -61,24 +61,28 @@ class ProjectCreationForm extends React.Component {
         {this.props.sidebar}
         <div className="page-main">
           {this.props.header}
-          <div className="auth-form-container">
+          <div className="prj-form-container">
             <form onSubmit={this.handleSubmit} 
-                  className="auth-form">
-              <div className="auth-inputs">
-                <span className="auth-input-label">Project Name</span>
-                <input type="text"
-                        value={this.state.name}
-                        onChange={this.update('name')}
-                        className="auth-input-field"
-                />
-                <span className="auth-input-label">Team</span>
-                <select onChange={this.update('team_id')}
-                        className="auth-input-field"
-                >
-                  {
-                    this.props.teams.map(team => <option value={team.id} key={team.id}>{team.name}</option>)
-                  }
-                </ select>
+                  className="prj-form">
+              <div className="prj-inputs">
+                <div>
+                  <div className="prj-input-label">Project Name</div>
+                  <input type="text"
+                          value={this.state.name}
+                          onChange={this.update('name')}
+                          className="prj-input-field"
+                  />
+                </div>
+                <div>
+                  <div className="prj-input-label">Team</div>
+                  <select onChange={this.update('team_id')}
+                          className="prj-input-field"
+                  >
+                    {
+                      this.props.teams.map(team => <option value={team.id} key={team.id}>{team.name}</option>)
+                    }
+                  </ select>
+                </div>
               </div>
               <input type="submit" 
                       value="Create Project"

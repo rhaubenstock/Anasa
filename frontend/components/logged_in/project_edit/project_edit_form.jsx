@@ -62,18 +62,20 @@ class ProjectEditForm extends React.Component {
           {this.props.header}
           <div className="prj-edit-form-container">
             <form onSubmit={this.handleSubmit} 
-                  className="auth-form">
-              <div className="auth-inputs">
-                <span className="auth-input-label">Project Name</span>
-                <input type="text"
-                        value={this.state.name}
-                        onChange={this.update('name')}
-                        className="auth-input-field"
-                />
+                  className="prj-form">
+              <div className="prj-inputs">
+                <div>
+                  <div className="prj-input-label">Project Name</div>
+                  <input type="text"
+                          value={this.state.name}
+                          onChange={this.update('name')}
+                          className="prj-input-field"
+                  />
+                </div>
               </div>
               <input type="submit" 
                       value="Edit Project"
-                      className="auth-form-submit"
+                      className="project-create-submit"
               />
             </form>
           </div>
