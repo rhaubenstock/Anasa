@@ -73,3 +73,23 @@
     }
   }
 }
+
+.splashSection {
+  background-color: #151b26;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .splashSection-container {
+    padding: 0 48px;
+    .splashSection-mainText-Container{
+      margin: 80px 0;
+      h1.splashSection-mainText{
+        font-size: 44px;
+        color: white;
+        line-height: 56px;
+        text-align: center;
+      }
+    }
+  }
+}
