@@ -74,6 +74,25 @@
   }
 }
 
+.firstSection {
+  background-color: white;
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  
+  .firstSection-title {
+    padding-bottom: 48px;
+    font-weight: 400;
+    font-size: 31px;
+    line-height: 43px;
+  }
+
+  .firstSection-inner{
+    line-height: 28px;
+    margin-bottom: 32px;
+  }
+}
+
 .splashSection {
   background-color: #151b26;
   min-height: 200px;

@@ -16,6 +16,10 @@ export default ({ signupLink }) => {
   return (
     <>
       <Header />
+      <section className="firstSection">
+        <h3 className="firstSection-title">Work on big ideas, without the busywork</h3>
+        <h5 className="firstSection-inner">From the small stuff to the big picture, Anasa organizes work so teams know what to do, why it matters, and how to get it done.</h5>
+      </section>
       <section className="splashSection">
         <div className="splashSection-container">
           <div className="">
@@ -29,6 +33,7 @@ export default ({ signupLink }) => {
           </div>
         </div>
       </section>
+      
       <Footer />
     </>
   );
