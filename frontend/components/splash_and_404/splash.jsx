@@ -28,6 +28,7 @@ export default ({ signupLink }) => {
                 <h1 className="splashSection-mainText">
                   See everything the team’s working on in one place.
                 </h1>
+                <a href="/signup">Get Started</a>
               </div>
            </div>
           </div>
