@@ -61,20 +61,25 @@ class ProjectCreationForm extends React.Component {
         {this.props.sidebar}
         <div className="page-main">
           {this.props.header}
-          <div className="prj-form-container">
-            <form onSubmit={this.handleSubmit} 
-                  className="prj-form">
-              <div className="prj-inputs">
-                <div>
-                  <div className="prj-input-label">Project Name</div>
+          <div className="prj-background">
+            <div className="prj-form-container">
+              <form onSubmit={this.handleSubmit} 
+                    className="prj-form">
+                <h2 className="prj-title">New Project</h2>
+                <div className="prj-inputs">
+                  <div className="prj-input-label-holder">
+                    <label className="prj-input-label">
+                      Project Name
+                    </label>
+                  </div>
                   <input type="text"
                           value={this.state.name}
                           onChange={this.update('name')}
                           className="prj-input-field"
                   />
-                </div>
-                <div>
-                  <div className="prj-input-label">Team</div>
+                  <div className="prj-input-label-holder">
+                    <label className="prj-input-label">Team</label>
+                  </div>
                   <select onChange={this.update('team_id')}
                           className="prj-input-field"
                   >
@@ -83,13 +88,13 @@ class ProjectCreationForm extends React.Component {
                     }
                   </ select>
                 </div>
-              </div>
-              <input type="submit" 
-                      value="Create Project"
-                      className="project-create-submit"
-                      disabled={(this.state.name.length === 0) || null}
-              />
-            </form>
+                <input type="submit" 
+                        value="Create Project"
+                        className="project-create-submit"
+                        disabled={(this.state.name.length === 0) || null}
+                />
+              </form>
+            </div>
           </div>
         </div>
       </div>

@@ -63,7 +63,7 @@ class ProjectEditForm extends React.Component {
           <div className="prj-edit-background">
             <div className="prj-edit-form-container">
               <form onSubmit={this.handleSubmit} 
-                    className="prj-form">
+                    className="prj-edit-form">
                 <h2 className="prj-edit-title">Edit Project</h2>
                 <div className="prj-edit-inputs">
                   <div className="prj-edit-input-label-holder">

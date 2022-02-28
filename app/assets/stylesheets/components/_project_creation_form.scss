@@ -1,50 +1,137 @@
-.prj-form {
+// .prj-form {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   .prj-inputs {
+//     display: flex;
+//     flex-direction: column;
+//     width: 80%;
+//     align-items: center;
+
+//     div {
+//       margin: 20px 0;
+//       display: flex;
+//       font-size: 40px;
+
+//       div {
+//         margin: 0 10px;
+//       }
+
+//       input {
+//         font-size: 30px;
+//       }
+
+//       select {
+//         font-size: 30px;
+//       }
+//     }
+//   }
+
+//   .project-create-submit {
+
+//     background-color: #796EFF;
+//     border-radius: 3px;
+//     border: none;
+//     color: #fff;
+
+//     display: inline-block;
+//     font-size: 20px;
+//     font-weight: 500;
+//     height: 40px;
+//     letter-spacing: .5px;
+//     line-height: 26px;
+//     // width: 100%;
+
+//     text-align: center;
+//     text-decoration: none;
+//     transition: background-color .15s,color .15s ease-in-out;
+//     white-space: nowrap;
+//   }
+// }
+
+
+
+.prj-background{
+  // back ground-color: #ccc;
+  // https://www.magicpattern.design/tools/css-backgrounds
+  background-image: radial-gradient(#9e5bec 0.4px, transparent 0.4px), radial-gradient(#9e5bec 0.4px, #000000 0.4px);
+  background-size: 16px 16px;
+  background-position: 0 0,8px 8px;
+  height: 79vh;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  .prj-inputs {
+}
+.prj-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 64px;
+  width: 400px;
+  background: #1e1f21;;
+  border-radius: 5px;
+  padding: 30px;
+  color: rgb(245, 244, 243);
+
+  .prj-form{
     display: flex;
     flex-direction: column;
-    width: 80%;
-    align-items: center;
 
-    div {
-      margin: 20px 0;
+    h2.prj-title {
+      // margin: 0 64px;
+      width: 400px;
+      font-weight: 300;
+      font-size: 32px;
+    }
+
+    div.prj-inputs {
       display: flex;
-      font-size: 40px;
+      flex-direction: column;
+      margin: 30px 0;
+      width: 400px;
 
-      div {
-        margin: 0 10px;
+      div.prj-input-label-holder {
+        margin: 8px 0;
+
+        label.prj-input-label {
+          font-size: 12px;
+          font-weight: 500;
+          color: rgb(162, 160, 162);
+        }
+      }
+      input.prj-input-field {
+        height: 36px;
+        padding-bottom: 6px;
+        padding-top: 6px;
+        background: rgb(37, 38, 40);
+        color: rgb(245, 244, 243);
+        border-right: none;
       }
 
-      input {
-        font-size: 30px;
-      }
+      // input.prj-input-field:focus {
+        
+      // }
+    }
+    select.prj-input-field {
+      border-radius: 6px;
+      height: 36px;
+      background: transparent;
+      color: rgb(245, 244, 243);
+      
+    }
 
-      select {
-        font-size: 30px;
-      }
+    input.project-create-submit {
+      background-color: rgb(69, 115, 210);
+      font-size: 14px;
+      height: 36px;
+      line-height: 36px;
+      padding: 0 12px;
+      border-radius: 5px;
+      border:none;
+      color: #fff;
+      margin-top: 30px;
     }
   }
-
-  .project-create-submit {
-
-    background-color: #796EFF;
-    border-radius: 3px;
-    border: none;
-    color: #fff;
-
-    display: inline-block;
-    font-size: 20px;
-    font-weight: 500;
-    height: 40px;
-    letter-spacing: .5px;
-    line-height: 26px;
-    // width: 100%;
-
-    text-align: center;
-    text-decoration: none;
-    transition: background-color .15s,color .15s ease-in-out;
-    white-space: nowrap;
-  }
 }
+
