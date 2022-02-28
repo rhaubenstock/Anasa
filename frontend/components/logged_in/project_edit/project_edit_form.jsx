@@ -60,25 +60,27 @@ class ProjectEditForm extends React.Component {
         {this.props.sidebar}
         <div className="page-main">
           {this.props.header}
-          <div className="prj-edit-form-container">
-            <form onSubmit={this.handleSubmit} 
-                  className="prj-form">
-              <h2 className="prj-edit-title">Edit Project</h2>
-              <div className="prj-edit-inputs">
-                <div className="prj-edit-input-label-holder">
-                  <label className="prj-edit-input-label">Project Name</label>
+          <div className="prj-edit-background">
+            <div className="prj-edit-form-container">
+              <form onSubmit={this.handleSubmit} 
+                    className="prj-form">
+                <h2 className="prj-edit-title">Edit Project</h2>
+                <div className="prj-edit-inputs">
+                  <div className="prj-edit-input-label-holder">
+                    <label className="prj-edit-input-label">Project Name</label>
+                  </div>
+                  <input type="text"
+                          value={this.state.name}
+                          onChange={this.update('name')}
+                          className="prj-edit-input-field"
+                  />
                 </div>
-                <input type="text"
-                        value={this.state.name}
-                        onChange={this.update('name')}
-                        className="prj-edit-input-field"
+                <input type="submit" 
+                        value="Save Edited Project"
+                        className="project-edit-submit"
                 />
-              </div>
-              <input type="submit" 
-                      value="Save Edited Project"
-                      className="project-edit-submit"
-              />
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>

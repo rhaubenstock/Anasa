@@ -1,3 +1,12 @@
+.prj-edit-background{
+  // back ground-color: #ccc;
+  // https://www.magicpattern.design/tools/css-backgrounds
+  background-image:  radial-gradient(#8c0ed0 1.6px, transparent 1.6px), radial-gradient(#8c0ed0 1.6px, #100303 1.6px);
+  background-size: 64px 64px;
+  background-position: 0 0,32px 32px;
+  height: 79vh;
+  padding: 30px
+}
 .prj-edit-form-container {
   display: flex;
   flex-direction: column;
@@ -57,3 +66,4 @@
     margin-top: 30px;
   }
 }
+
