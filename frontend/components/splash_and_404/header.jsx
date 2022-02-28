@@ -18,7 +18,7 @@ export default () => {
               <span className="splash-404-header-login-text">Log In</span>
             </Link>
             <Link to="/signup" className="splash-404-header-login">
-            <span className="splash-404-header-login-text">Sign Up</span>
+              <span className="splash-404-header-login-text">Sign Up</span>
             </Link>
           </div>
         </div>

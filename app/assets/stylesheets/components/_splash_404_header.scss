@@ -112,3 +112,30 @@
     }
   }
 }
+
+.tryFree {
+  //display
+  background-color: #796EFF;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  height: 36px;
+  letter-spacing: .5px;
+  line-height: 36px;
+  padding: 0 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .15s,color .15s ease-in-out;
+  white-space: nowrap;
+
+}
+
+.tryFree:hover {
+  transition-duration: .2s;
+  background: #635ac7;
+  border-color: #635ac7;
+}

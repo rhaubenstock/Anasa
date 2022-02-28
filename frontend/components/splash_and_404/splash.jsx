@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
+import { Link } from 'react-router-dom';
+
 
 export default ({ signupLink }) => {
       // <div className="splash-main">
@@ -28,7 +30,7 @@ export default ({ signupLink }) => {
                 <h1 className="splashSection-mainText">
                   See everything the team’s working on in one place.
                 </h1>
-                <a href="/signup">Get Started</a>
+                <Link to="/signup" className="tryFree">Try it Out!(Free)</Link>
               </div>
            </div>
           </div>

@@ -117,7 +117,7 @@ class TeamShow extends React.Component{
                         <Link to={`/users/${teammate.id}`} >
                             <i className="fa-solid fa-circle-user fa-4x"
                                 style={{color: teammate.color}}></i>
-                            <span>{teammate.email}</span>
+                            <span className="teammate-email">{teammate.email}</span>
                         </Link>
                       </li>
                     )
@@ -136,7 +136,7 @@ class TeamShow extends React.Component{
                         <Link to={`/projects/${prj.id}`} >
                           <i className="fa-solid fa-briefcase fa-5x"
                              style={{color: prj.color}}></i>
-                          <span>{prj.name}</span>
+                          <span className="prj-name">{prj.name}</span>
                         </Link>
                       </div>
                     )
@@ -145,7 +145,7 @@ class TeamShow extends React.Component{
                   <div className=" link prj-create-link">
                     <Link to={`/projects/new`} >
                       <i class="fa-regular fa-square-plus fa-5x"></i>
-                      <span>Make a new project </ span>
+                      <span className="prj-name">Make a new project</span>
                     </Link>
                   </div>
                 </div>

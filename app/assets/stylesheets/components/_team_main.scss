@@ -53,21 +53,36 @@
   }
 }
 
-.link span {
+.teammate-email {
   //color 
   color: black;
   //display
-  margin-left: 8px;
+  margin: 20px;
   //typography
   font-size: 13px;
 
   text-align: center;
 }
 
-.link span:hover {
-  //typography
+.teammate-email:hover {
   text-decoration: underline;
 }
+
+.prj-name {
+   //color 
+  color: black;
+  //display
+  // margin-left: 8px;
+  //typography
+  font-size: 13px;
+
+  text-align: center;
+}
+
+.prj-name:hover {
+  text-decoration: underline;
+}
+
 
 .prj-create-link {
   flex-basis: 33.33%;
@@ -93,6 +108,7 @@
   // align-items: center;
   // text-align: center;
   margin: 20px 0;
+  max-height: 200px;
 
 
   .TeamShow-Member {
