@@ -77,19 +77,36 @@
 .firstSection {
   background-color: white;
   display:flex;
-  flex-direction: column;
-  text-align: center;
+  flex-direction: row;
+  justify-content: space-around;
+  // text-align: center;
   
+  div.firstSection-text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 30px;
+  }
   .firstSection-title {
     padding-bottom: 48px;
     font-weight: 400;
-    font-size: 31px;
+    font-size: 44px;
     line-height: 43px;
+    width: 380px;
+    border-bottom: 2px solid grey;
   }
 
   .firstSection-inner{
     line-height: 28px;
+    margin-top: 30px;
     margin-bottom: 32px;
+    width: 400px;
+  }
+
+  .splash-img {
+    height: 300px;
+    border: #a1d5a1 solid 5px;
+    margin-left: 20px;
   }
 }
 
@@ -99,12 +116,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
+
   .splashSection-container {
     padding: 0 48px;
     .splashSection-mainText-Container{
       margin: 80px 0;
       h1.splashSection-mainText{
-        font-size: 44px;
+        font-size: 38px;
         color: white;
         line-height: 56px;
         text-align: center;

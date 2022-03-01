@@ -83,10 +83,7 @@ class TeamShow extends React.Component{
         </div>  
       </div>
     );
-    // const randomColor = () => {
-    //   const colors = ["green", "orange", "yellow", "red", "blue", "purple"]
-    //   return colors[Math.floor(Math.random()*colors.length)];
-    // }
+
 
     return (
       <div className="home-main">

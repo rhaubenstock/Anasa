@@ -19,8 +19,13 @@ export default ({ signupLink }) => {
     <>
       <Header />
       <section className="firstSection">
-        <h3 className="firstSection-title">Work on big ideas, without the busywork</h3>
-        <h5 className="firstSection-inner">From the small stuff to the big picture, Anasa organizes work so teams know what to do, why it matters, and how to get it done.</h5>
+        <div className="firstSection-text">
+          <h3 className="firstSection-title">Work on big ideas, without the busywork</h3>
+          <h5 className="firstSection-inner">From the small stuff to the big picture, Anasa organizes work so teams know what to do, why it matters, and how to get it done.</h5>
+        </div>
+        <div>
+          <img className="splash-img" src="assets/teamwork.jpeg" alt="" />
+        </div>
       </section>
       <section className="splashSection">
         <div className="splashSection-container">
