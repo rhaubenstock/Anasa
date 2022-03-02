@@ -12,12 +12,12 @@ class Api::UsersController < ApplicationController
 
   def show
     # unsafe to allow any user to find any other user, but will test for now
-    if current_user.id = params[:id]
+    if current_user.id == params[:id]
       @user = current_user
     else
       @user = current_user.teammates.find_by(id: params[:id]) || User.new
     end
-
+    # debugger
     render "api/users/show"
   end
 

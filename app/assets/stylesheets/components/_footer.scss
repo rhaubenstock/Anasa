@@ -36,24 +36,42 @@
         justify-content: space-between;
         
         li{
-          height: 33px;
+          height: 30px;
           border-radius: 50%;
           margin-left: 10px;
           margin-right: 10px;
           background: white;
   
-          img{
-            margin-top: 0.5px;
+          .footer-img{
+            // margin-top: 1px;
             border-radius: 50%;
-            border: 1px solid black;
+            // border: 1px solid black;
+            display: block;
+            position: relative;
+            background-repeat: no-repeat;
+            // background-position-y: 0.2px;
+            background-size: 30px;
+
+            height: 30px;
+            width: 30px;
           }
+          .profile-img {
+            background-image: image-url('profile.png');
+          }
+          .linkedin-img {
+            background-image: image-url('linkedin.png');
+          }
+          .github-img {
+            background-image: image-url('github.png');
+          }
+
         }
   
-        li:hover{
-          background: #e6e6e6;
-          box-shadow: 0 6px 0px #e6e6e6;
-          padding-top: 1px;
-        }
+        // li:hover{
+        //   // background: #e6e6e6;
+        //   // box-shadow: 0 6px 0px #e6e6e6;
+        //   // padding-top: 1px;
+        // }
       }
     }
   } 

@@ -92,50 +92,99 @@ class ProjectTasks extends React.Component{
   }
  
   render(){
-    return(
-      <div>
-        <p>Task List</p>
-        <ul className="task-list">
-            {
-              Object.values(this.props.tasks).map(task => 
-                <li className="deletableTask" key={task.id}>
-                  <input type="text" 
-                         value={this.state.tasks[task.id] ? this.state.tasks[task.id].name : ""}
-                         onChange={this.changeTask(task.id)}
+      // <div>
+      //   <p>Task List</p>
+      //   <ul className="task-list">
+      //       {
+      //         Object.values(this.props.tasks).map(task => 
+      //           <li className="deletableTask" key={task.id}>
+      //             <div type="text" 
+      //                    value={this.state.tasks[task.id] ? this.state.tasks[task.id].name : ""}
+      //                    onChange={this.changeTask(task.id)}
                          
-                  />
+      //             />
                   
-                  <button onClick={this.deleteTask(task.id)}> Delete Task </button>
-                </li>
-              )
-            }
-            <li>
-              <h5>Create a new task:</h5>
-              <input type="text"
-                     value={this.state.newTaskName}
-                     onChange={this.update("newTaskName")}
-              />
+      //             <button onClick={this.deleteTask(task.id)}> Delete Task </button>
+      //           </li>
+      //         )
+      //       }
+      //       <li>
+      //         <h5>Create a new task:</h5>
+      //         <input type="text"
+      //                value={this.state.newTaskName}
+      //                onChange={this.update("newTaskName")}
+      //         />
 
-              <select onChange={this.update("assignee_id")}
-                        className="auth-input-field"
-              >
-              <option value={0} key={0}>No Specified Assignee </option>
-                  {
-                    this.props.teammates.map(user => <option value={user.id} key={user.id}>{user.email}</option>)
-                  }
-              </ select>
+      //         <select onChange={this.update("assignee_id")}
+      //                   className="auth-input-field"
+      //         >
+      //         <option value={0} key={0}>No Specified Assignee </option>
+      //             {
+      //               this.props.teammates.map(user => <option value={user.id} key={user.id}>{user.email}</option>)
+      //             }
+      //         </ select>
 
-              <input type="submit" 
-                     onClick={this.addTask()} 
-                     value="Add Task" 
-                     disabled={(this.state.newTaskName.length === 0) || null}
+      //         <input type="submit" 
+      //                onClick={this.addTask()} 
+      //                value="Add Task" 
+      //                disabled={(this.state.newTaskName.length === 0) || null}
                      
-              />
-            </li>
-          </ul>
-          
+      //         />
+      //       </li>
+      //   </ul>
+      // </div>
+
+    const emptyNewTask = this.state.newTaskName.length === 0;
+    
+    // can change placeholder value based on state
+    // on focus -> change to What's the next thing on your plate
+    const taskAddButton = 
+      <input type="submit"
+        className="task-button"
+        onClick={this.addTask()}
+        value="Add Task"
+        disabled={emptyNewTask || null}
+      />;
+
+    const taskCreator = 
+      <div className="task-wrapper">
+        <input className="task-text"
+             value={this.state.newTaskName}
+             onChange={this.update("newTaskName")}
+             placeholder="Click to enter a new task"
+        />
+        
+        {emptyNewTask ? null : taskAddButton}
+        
+
+      </div>;
+    const taskList = Object.values(this.props.tasks).map(task =>
+      <div className="task-wrapper">
+        <input className="task-text"
+          value={this.state.tasks[task.id] ? this.state.tasks[task.id].name : ""}
+          onChange={this.changeTask(task.id)}
+        />
+
+        <button onClick={this.deleteTask(task.id)}
+                className="task-button delete-button"
+        > Delete Task </button>
+
       </div>
-    )
+    );
+
+    return(
+      <div className="task-spacing-container">
+        <div className="task-visual-container">
+          <div className="task-header-container">
+            <div className="task-header">
+              Project Priorities
+            </div>
+          </div>
+          {taskCreator}
+          {taskList}
+        </div>
+      </div>
+    );
   }
 
 

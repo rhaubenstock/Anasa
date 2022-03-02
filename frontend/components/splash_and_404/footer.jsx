@@ -11,17 +11,18 @@ export default () => {
           <ul className="footer-links">
             <li className="user-profile">
               <a target="_blank" href="">
-                <img className="footer-img" src="assets/profile.png" alt="" />
+                <div className="footer-img profile-img"></div>
               </a>
             </li>
             <li className="linked-in">
               <a target="_blank" href="https://www.linkedin.com/in/reed-haubenstock-49325995/">
-                <img className="footer-img" src="assets/linkedin.png" alt="" />
+                <div className="footer-img linkedin-img"></div>
               </a>
             </li>
             <li className="github">
               <a target="_blank" href="https://github.com/rhaubenstock/">
-                <img className="footer-img" src="assets/github.png" alt="" />
+                {/* <img className="footer-img" src="assets/github.png" alt="" /> */}
+                <div className="footer-img github-img"></div>
               </a>
             </li>
           </ul>
