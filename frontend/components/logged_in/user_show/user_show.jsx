@@ -57,7 +57,13 @@ class UserShow extends React.Component{
   }
 
   render(){
-    const returnToHomeProfileLink = (this.props.canEdit) ? null : 
+    const returnHomeOrCreateProjectLink = (this.props.canEdit) ? (<h5>
+      <button>
+        <Link to={`/projects/new`} className="team-create-submit">
+          Make a New Project Page
+        </Link>
+      </ button>
+    </h5>) : 
     (<button>
           <Link to={`$/users/${this.props.currentUserId}`}>Go to your profile</ Link>
     </button>);
@@ -69,7 +75,7 @@ class UserShow extends React.Component{
           {this.props.header}
           <div className="UserShow-main">
             <div> No User Found </div>
-            {returnToHomeProfileLink}
+            {returnHomeOrCreateProjectLink}
           </div>
         </div>  
       </div>
@@ -92,7 +98,7 @@ class UserShow extends React.Component{
             />
         </div>
         {this.props.tasks}
-        {returnToHomeProfileLink}
+        {returnHomeOrCreateProjectLink}
       </div>
     </div>
   </div>

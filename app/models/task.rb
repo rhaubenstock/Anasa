@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
   validates :taskable_id, :name, :taskable_type, presence: true
-  validates :taskable_id, uniqueness: { scope: [:taskable_type, :name]}
+  # validates :taskable_id, uniqueness: { scope: [:taskable_type, :name]}
   
   belongs_to :assignee,
     primary_key: :id,

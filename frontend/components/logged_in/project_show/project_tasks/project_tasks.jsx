@@ -57,7 +57,6 @@ class ProjectTasks extends React.Component{
   }
 
   deleteTask(id){
-    //console.log("hello")
     return () =>{
       // when I delete a task, do I need to change projectIds in the projects reducer
       // for the corresponding project?
@@ -158,19 +157,21 @@ class ProjectTasks extends React.Component{
         
 
       </div>;
-    const taskList = Object.values(this.props.tasks).map(task =>
-      <div className="task-wrapper">
-        <input className="task-text"
-          value={this.state.tasks[task.id] ? this.state.tasks[task.id].name : ""}
-          onChange={this.changeTask(task.id)}
-        />
+    const taskList = <div className="task-list"> 
+      {Object.values(this.props.tasks).reverse().map(task =>
+        <div className="task-wrapper">
+          <input className="task-text"
+            value={this.state.tasks[task.id] ? this.state.tasks[task.id].name : ""}
+            onChange={this.changeTask(task.id)}
+          />
 
-        <button onClick={this.deleteTask(task.id)}
-                className="task-button delete-button"
-        > Delete Task </button>
+          <button onClick={this.deleteTask(task.id)}
+                  className="task-button delete-button"
+          > Delete Task </button>
 
-      </div>
-    );
+        </div>
+      ) }
+    </div>;
 
     return(
       <div className="task-spacing-container">

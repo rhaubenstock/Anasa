@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_25_012937) do
+ActiveRecord::Schema.define(version: 2022_03_02_005218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 2022_01_25_012937) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["assignee_id"], name: "index_tasks_on_assignee_id"
-    t.index ["taskable_type", "taskable_id", "name"], name: "index_tasks_on_taskable_type_and_taskable_id_and_name", unique: true
   end
 
   create_table "teams", force: :cascade do |t|

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Button from '@mui/material/Button';
 
 class ProjectShow extends React.Component{
   constructor(props){
@@ -90,22 +89,13 @@ class ProjectShow extends React.Component{
           {this.props.header}
           <div className="ProjectShow-main">
           <h3>
-  
             <Link to={`/projects/edit/${this.props.id}`}> 
-              <button> Edit this project </ button>
+                <button className="edit-prj-button"> <i class="fa-solid fa-pen"></i> Edit this project </ button>
             </Link>
           </h3>
           {
             this.props.tasks
           }
-          <h5>
-            <Link to={`/projects/new`} className="team-create-submit">
-              <button>Make a New Project Page</ button>
-            </Link>
-          </h5>
-          {/* <Button variant="raised" color="primary">
-            Hello World
-          </Button> */}
           </div>
         </div>
       </div>

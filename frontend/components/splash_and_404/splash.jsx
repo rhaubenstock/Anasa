@@ -23,8 +23,8 @@ export default ({ signupLink }) => {
           <h3 className="firstSection-title">Work on big ideas, without the busywork</h3>
           <h5 className="firstSection-inner">From the small stuff to the big picture, Anasa organizes work so teams know what to do, why it matters, and how to get it done.</h5>
         </div>
-        <div>
-          <img className="splash-img" src="assets/teamwork.jpeg" alt="" />
+        <div className="splash-img">
+          {/* <img  src="assets/teamwork.jpeg" alt="" /> */}
         </div>
       </section>
       <section className="splashSection">
