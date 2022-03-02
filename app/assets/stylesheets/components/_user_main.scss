@@ -1,8 +1,38 @@
 .UserShow-main {
   margin-top: 50px;
   margin-left: 10px;
-  width: 60%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  // flex-direction: column;
 
+  .aboutme-container{
+    // display: flex;
+    // margin: auto;
+
+    .user-aboutme {
+      resize: none;
+      background: #2c2c2c;
+      // border-color: #3e1b80;
+      border: none;
+      color: rgb(245, 244, 243);
+      width: 300px;
+      margin: 15px;
+      padding: 10px;
+    }
+
+    .user-aboutme:focus {
+      outline: none;
+    }
+  }
+
+  // .new-prj-link {
+
+  // }
+  // .home-profile-link {
+  //   background: #505051;
+  //   color: rgb(230,229,228);
+  //   width: 150px;
+  //   border-radius: 5px;
+  // }
 }

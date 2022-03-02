@@ -52,8 +52,8 @@ export const logout = () => dispatch => (
 // ../../db/seeds.rb with the exact same credentials
 
 const demoUser = {
-  "email": "awesome@possums.com",
-  "password": "Possums-Are-Awesome"
+  "email": "George",
+  "password": "gerogios"
 };
 
 export const loginDemo = () => login(demoUser);

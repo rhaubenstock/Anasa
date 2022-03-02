@@ -106,48 +106,112 @@ class UserTasks extends React.Component{
     // conditionally add onclick in react
     // https://stackoverflow.com/questions/48223852/how-to-conditionally-add-or-not-onclick-on-a-div-in-react
     
-    const addTaskEl = (!this.props.canEdit) ? null : (
-      <li key={0}>
-        <h5>Create a new task:</h5>
-        <input type="text"
-               value={this.state.newTaskName}
-               onChange={this.update("newTaskName")}
-               disabled={(this.state.newTaskName.length === 0) || null}
+    // const addTaskEl = (!this.props.canEdit) ? null : (
+    //   <li key={0}>
+    //     <h5>Create a new task:</h5>
+    //     <input type="text"
+    //            value={this.state.newTaskName}
+    //            onChange={this.update("newTaskName")}
+    //            disabled={(this.state.newTaskName.length === 0) || null}
+    //     />
+    //     <select onChange={this.update('prj_id')}
+    //               className="auth-input-field">
+    //         <option value={0} key={0}>Personal Task</option>
+    //         {
+    //           this.props.prjs.map(prj => <option value={prj.id} key={prj.id}>{prj.name}</option>)
+    //         }
+    //     </ select>
+    //     <input type="submit" onClick={this.addTask} value="Add Task" />
+    //   </li> );
+
+      // const deleteButton = (task) => {
+      //   return (!this.props.canEdit) ? null :  (<button onClick={this.deleteTask(task.id)}> X </button>);
+      // };
+
+    const emptyNewTask = this.state.newTaskName.length === 0;
+
+    // can change placeholder value based on state
+    // on focus -> change to What's the next thing on your plate
+    const taskAddButton =
+      <input type="submit"
+        className="task-button"
+        onClick={this.addTask}
+        value="Add Task"
+        disabled={emptyNewTask || null}
+      />;
+
+    const taskCreator = (!this.props.canEdit) ? null :
+      <div className="task-wrapper">
+        <input className="task-text"
+          value={this.state.newTaskName}
+          onChange={this.update("newTaskName")}
+          placeholder="Click to enter a new task"
         />
-        <select onChange={this.update('prj_id')}
-                  className="auth-input-field">
+        <div className="new-task-buttons">
+       
+          <select onChange={this.update('prj_id')}
+            className="prj-selector">
             <option value={0} key={0}>Personal Task</option>
             {
               this.props.prjs.map(prj => <option value={prj.id} key={prj.id}>{prj.name}</option>)
             }
-        </ select>
-        <input type="submit" onClick={this.addTask} value="Add Task" />
-      </li> );
+          </ select>
+          {emptyNewTask ? null : taskAddButton}
+        </div>
 
-      const deleteButton = (task) => {
-        return (!this.props.canEdit) ? null :  (<button onClick={this.deleteTask(task.id)}> X </button>);
-      };
 
-    return(
-      <div>
-        <p>Task List</p>
-        <ul className="task-list">
-            {
-              Object.values(this.props.tasks).map(task => 
-                <li className="deletableTask" key={task.id}>
-                  <input type="text" 
-                         value={this.state.tasks[task.id] ? this.state.tasks[task.id].name : ""}
-                         onChange={this.props.canEdit ? this.changeTask(task.id) : undefined}
-                         readOnly={!this.props.canEdit}      
-                  />
-                  { deleteButton(task) }
-                </li>
-              )
-            }
-            { addTaskEl }
-          </ul>
+    </div>;
+    const taskList = <div className="task-list">
+      {Object.values(this.props.tasks).reverse().map(task =>
+        <div className="task-wrapper">
+          <input className="task-text"
+            value={this.state.tasks[task.id] ? this.state.tasks[task.id].name : ""}
+            onChange={this.props.canEdit ? this.changeTask(task.id) : undefined}
+            readOnly={!this.props.canEdit} 
+          />
+          { (!this.props.canEdit) ? null :
+            <button onClick={this.deleteTask(task.id)}
+              className="task-button delete-button"
+            > Delete Task </button>
+          }
+        </div>
+      )}
+    </div>;
+
+    return (
+      <div className="task-spacing-container">
+        <div className="task-visual-container">
+          <div className="task-header-container">
+            <div className="task-header">
+              Todos
+            </div>
+          </div>
+          {taskCreator}
+          {taskList}
+        </div>
       </div>
-    )
+    );
+
+    // return(
+    //   <div>
+    //     <p>Task List</p>
+    //     <ul className="task-list">
+    //         {
+    //           Object.values(this.props.tasks).map(task => 
+    //             <li className="deletableTask" key={task.id}>
+    //               <input type="text" 
+    //                      value={this.state.tasks[task.id] ? this.state.tasks[task.id].name : ""}
+    //                      onChange={this.props.canEdit ? this.changeTask(task.id) : undefined}
+    //                      readOnly={!this.props.canEdit}      
+    //               />
+    //               { deleteButton(task) }
+    //             </li>
+    //           )
+    //         }
+    //         { addTaskEl }
+    //       </ul>
+    //   </div>
+    // )
   }
 }
 

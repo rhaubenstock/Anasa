@@ -57,16 +57,17 @@ class UserShow extends React.Component{
   }
 
   render(){
-    const returnHomeOrCreateProjectLink = (this.props.canEdit) ? (<h5>
-      <button>
-        <Link to={`/projects/new`} className="team-create-submit">
-          Make a New Project Page
-        </Link>
-      </ button>
-    </h5>) : 
-    (<button>
-          <Link to={`$/users/${this.props.currentUserId}`}>Go to your profile</ Link>
-    </button>);
+    // const returnHomeOrCreateProjectLink = (this.props.canEdit) ? (<h5>
+    //   <button className="new-prj-link">
+    //     <Link to={`/projects/new`} className="team-create-submit">
+    //       Make a New Project Page
+    //     </Link>
+    //   </ button>
+    // </h5>) : null;
+    // (<button className="home-profile-link"> 
+    //     <Link to={`$/users/${this.props.currentUserId}`}>  <i className="fa-solid fa-house"/> Go to your profile</ Link>
+    // </button>);
+
 
     if(!this.props.user) return (
       <div className="home-main">
@@ -75,11 +76,29 @@ class UserShow extends React.Component{
           {this.props.header}
           <div className="UserShow-main">
             <div> No User Found </div>
-            {returnHomeOrCreateProjectLink}
+            {/* {returnHomeOrCreateProjectLink} */}
           </div>
         </div>  
       </div>
     );
+
+    const aboutMe = 
+      <div className="task-spacing-container">
+        <div className="task-visual-container">
+          <div className="task-header-container">
+            <div className="task-header">
+              About Me:
+            </div>
+          </div>
+          <div className="aboutme-container">
+            <textarea className="user-aboutme"
+            onChange={this.changeAboutMe()}
+            value={this.state.aboutMe}
+            placeholder="Add a description of yourself here!"
+              />
+          </div>
+        </div>
+      </div>;
 
 
     return (
@@ -91,14 +110,9 @@ class UserShow extends React.Component{
         {/* <h3>
           { this.state.email ?  `${this.state.email}'s Page` : this.props.name }
         </h3> */}
-          <div>
-            <textarea onChange={this.changeAboutMe()}
-                      value={this.state.aboutMe}
-                      placeholder="Add a description of yourself here!"
-            />
-        </div>
+        {aboutMe}
         {this.props.tasks}
-        {returnHomeOrCreateProjectLink}
+        {/* {returnHomeOrCreateProjectLink} */}
       </div>
     </div>
   </div>

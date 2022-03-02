@@ -11,66 +11,47 @@
 User.destroy_all
 User.create([
   {
-    email: "everything",
-    password: "everything",
-    about_me: "I am everything"
+    email: "George",
+    password: "gerogios",
+    about_me: "I love to play guitar on sunny days at the beach."
   },
   {
-    email: "awesome@possums.com",
-    password: "Possums-Are-Awesome",
-    about_me: "Possums are great"
+    email: "Belinda",
+    password: "Ilikebells",
+    about_me: "Teaching is cool, especially when your students go on to teach others creating a cascading wave of information!"
   },
   {
-    email: "saucesome@possums.com",
-    password: "Possums-Are-Awesome",
-    about_me: "Relish is best sauce"
+    email: "Fred",
+    password: "notagoodpassword",
+    about_me: "Being on a team you can trust makes it easier to focus on the task at hand."
   },
   {
-    email: "blossom@possums.com",
-    password: "Possums-Are-Awesome",
-    about_me: "Pokemon Forever"
+    email: "Olivia",
+    password: "Oliveoilevoo",
+    about_me: "Knowing who is responsible for what makes following up on a project quick and efficient!"
   },
   {
-    email: "wholesome@possums.com",
+    email: "Joe",
     password: "Possums-Are-Awesome",
-    about_me: "I love to help, please talk to me!"
+    about_me: "On off days I like to go to the zoo and remember that we are all social animals at our core."
   },
   {
-    email: "totalsum@possums.com",
-    password: "Possums-Are-Awesome",
-    about_me: "Algorithms get things done better"
+    email: "Samantha",
+    password: "1231231432",
+    about_me: "Anasa has saved me so much time that I would've otherwise spent writing emails or on call managing projects"
   },
 ])
 
 Team.destroy_all
 Team.create([
   {
-    name: "Team Rocket",
-    description: "Prepare for trouble!\n
-    And make it double!\n
-    To protect the world from devastation!\n
-    To unite all peoples within our nation!\n
-    To denounce the evils of truth and love!\n
-    To extend our reach to the stars above!\n
-    Jessie!\n
-    James!\n
-    Team Rocket blasts off at the speed of light!\n
-    Surrender now, or prepare to fight!\n
-    \n
-    Meowth!\n
-    That's right!"
+    name: "DeeperMind",
+    description: "DeeperMind's goal is to create AI that can neutralize any potential AI threat to mankind"
   },
 
   {
-    name: "Teen Titans",
-    description: "When there's trouble you know who to call\n
-    Teen Titans!\n
-    From their towers they can see it all\n
-    Teen Titans!\n
-    When there's evil on the attack\n
-    You can rest knowing they've got your back\n
-    'Cause when the world needs heroes on patrol\n
-    Teen Titans, go!"
+    name: "GreenMars",
+    description: "We seek to re-establish Mars's atmosphere to make it green and hospitable to human life."
   },
 
   {
@@ -94,7 +75,7 @@ User.all.includes(:teams).each do |user|
   Project.create(
     {
       owner_id: user.id,
-      name: "#{user.email}'s first project",
+      name: "#{user.email}'s project",
       team_id: user.teams.first.id
     });
 end
