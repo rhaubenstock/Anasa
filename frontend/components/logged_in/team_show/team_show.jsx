@@ -101,6 +101,7 @@ class TeamShow extends React.Component{
                   <textarea value={this.state.description || ""}
                             placeholder="Click to add team description..."
                             onChange={this.changeDescription()}
+                            className="team-description"
                     />
                   
                 </div>

@@ -16,6 +16,8 @@
   flex-direction: row;
   // align-items: center;
   justify-content: center;
+  color: white;
+
   .TeamShow-leftPane {
     display:flex;
     flex-direction: column;
@@ -31,18 +33,33 @@
         padding: 8px 0 8px;
       }
 
-      .description-Holder {
-        textarea {
-          resize: none;
-          width: 200px;
-          height: 300px;
-        }
+      // .description-Holder {
+      //   textarea {
+      //     resize: none;
+      //     width: 200px;
+      //     height: 300px;
+      //   }
         
-        border: 1px grey;
-      }
-      .description-Holder:hover {
-        border: 1px red;
-      }
+      //   border: 1px grey;
+      // }
+      // .description-Holder:hover {
+      //   border: 1px red;
+      // }
+
+       .team-description {
+          resize: none;
+          background: #2c2c2c;
+          // border-color: #3e1b80;
+          border: none;
+          color: rgb(245, 244, 243);
+          width: 300px;
+          margin: 15px;
+          padding: 10px;
+        }
+
+        .team-description:focus {
+          outline: none;
+        }
     }
   }
   .TeamShow-rightPane{
@@ -55,7 +72,7 @@
 
 .teammate-email {
   //color 
-  color: black;
+  // color: black;
   //display
   margin: 20px;
   //typography
@@ -70,7 +87,7 @@
 
 .prj-name {
    //color 
-  color: black;
+  // color: black;
   //display
   // margin-left: 8px;
   //typography
