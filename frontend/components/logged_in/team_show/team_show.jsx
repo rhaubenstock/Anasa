@@ -92,10 +92,15 @@ class TeamShow extends React.Component{
           {this.props.header}
           <div className="TeamShow-main">
             <div className="TeamShow-leftPane">
-              <div className="description-holder-with-title">
-                <div className="TeamShow-description-title">
+              <div className="team-visual-container">
+                {/* <div className="TeamShow-description-title">
                   <h5>Description</h5>
 
+                </div> */}
+                <div className="task-header-container">
+                  <div className="task-header">
+                    Description
+                  </div>
                 </div>
                 <div className="description-Holder">
                   <textarea value={this.state.description || ""}

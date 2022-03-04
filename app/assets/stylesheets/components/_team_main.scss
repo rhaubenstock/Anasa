@@ -61,6 +61,48 @@
           outline: none;
         }
     }
+
+    .team-visual-container {
+        border: 3px solid #424244;
+        border-radius: 8px;
+        background: #2A2B2D;
+        padding-bottom: 5px;
+        width: 200px;
+        max-height: 500px;
+        
+
+      .task-header-container {
+          border-bottom: 2px solid #424244;
+          display: flex;
+          // padding-left: 24px;
+          // padding-right: 24px;
+          justify-content: left;
+
+        .task-header {
+          font-size: 20px;
+          line-height: 28px;
+          font-weight: 500;
+          color: #f5f4f3;
+          padding: 10px 50px;
+        }
+      }
+
+      .team-description {
+          resize: none;
+          background: #2c2c2c;
+          // border-color: #3e1b80;
+          border: none;
+          color: rgb(245, 244, 243);
+          // width: 300px;
+          height: 70px;
+          margin: 15px;
+          padding: 10px;
+        }
+
+        .team-description:focus {
+          outline: none;
+        }
+    }
   }
   .TeamShow-rightPane{
     display:flex;
