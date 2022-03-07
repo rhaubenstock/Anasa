@@ -31,7 +31,9 @@ class ProjectCreationForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const project = Object.assign({}, this.state);
-    console.log(this.state.name.length);
+    project.team_id ||= this.props.teams[0].id;
+
+    // console.log(this.state.name.length);
     this.props.thunkCreateProject(project).then(
       res => {
         this.props.history.push(`/projects/${res.project.id}`);
@@ -56,6 +58,7 @@ class ProjectCreationForm extends React.Component {
   // }
   
   render(){
+    // console.table(this.props.teams);
     return (
       <div className="home-main">
         {this.props.sidebar}

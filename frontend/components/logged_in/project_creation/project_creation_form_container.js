@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
   const userId = state.session ? state.session.id : null;
   const user = state.entities.users ? state.entities.users[userId] : null;
   const teamIds = user ? user.teamIds : [];
+  const id = teamIds.length ? teamIds[0].id : undefined;
 
   const teams = [];
   if(state.entities.teams) {
@@ -22,6 +23,7 @@ const mapStateToProps = (state) => {
   }
 
   return { 
+    id,
     teams,
     header: <HomeHeaderContainer title="Project Creation Page" />,
     sidebar: <SidebarContainer /> 

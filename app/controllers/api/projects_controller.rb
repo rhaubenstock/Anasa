@@ -16,6 +16,7 @@ class Api::ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.owner_id = current_user.id
+    # debugger
     # should probably also make sure user belongs to the team that 
     # the project is being saved to
     if @project.save

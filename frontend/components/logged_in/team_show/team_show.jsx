@@ -112,7 +112,7 @@ class TeamShow extends React.Component{
                 </div>
               </div>
               <div className="home-member-links">
-                <div>Team Members:</div>
+                <div className="home-member-title">Team Members:</div>
                 <ul>
                   {
                     this.props.teammates.map(teammate => 
@@ -131,7 +131,7 @@ class TeamShow extends React.Component{
           
             <div className="TeamShow-rightPane">
               <div className="home-prj-links">
-                <div>Project Links:</div>
+                <div className="home-prj-title">Project Links:</div>
                 <div className="prj-grid">
                   {
                     this.props.projects.map(prj => 

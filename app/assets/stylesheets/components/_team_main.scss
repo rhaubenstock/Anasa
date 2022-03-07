@@ -23,6 +23,10 @@
     flex-direction: column;
     width: 258px;
     margin: 0 20px;
+    height: 80vh;
+    justify-content: space-evenly;
+
+
     .description-holder-with-title{
       // display: flex;
       // flex-direction: column;
@@ -103,6 +107,9 @@
           outline: none;
         }
     }
+    .team-visual-container:hover {
+        border-color: #6A696A;
+    }
   }
   .TeamShow-rightPane{
     display:flex;
@@ -170,6 +177,14 @@
   max-height: 200px;
   overflow: auto;
 
+  .home-member-title{
+    border: #424244 1px solid;
+    width: fit-content;
+    border-radius: 4px;
+    padding: 5px;
+    background: #2A2B2D;
+  }
+
   .TeamShow-Member {
     margin: 0 24px 0 24px;
     padding: 8px 0;
@@ -188,9 +203,19 @@
   // align-items: center;
   // text-align: center;
   // .TeamShow-Project {
+    .home-prj-title{
+      border: #424244 1px solid;
+      width: fit-content;
+      border-radius: 4px;
+      padding: 5px;
+      background: #2A2B2D;
+    }
     .prj-grid {
-      display: flex;
-      flex-flow: row wrap;
+      // display: flex;
+      // flex-flow: row wrap;
+      grid-template-columns: 1fr 1fr 1fr;
+      display: grid;
+
 
       .TeamShow-Project {
         flex-basis: 33.33%;
