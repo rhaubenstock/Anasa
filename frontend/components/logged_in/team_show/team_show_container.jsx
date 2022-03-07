@@ -21,6 +21,8 @@ const mapStateToProps = (state, ownProps) => {
   const name = team ? team.name : "Loading Team Name...";
   const description = team ? team.description : undefined;
   const teammates = [];
+  const currentUserId = state.session ? state.session.id : null;
+
   if(team && team.teammateIds && team.teammateIds.length > 0){
     team.teammateIds.forEach(mateId => {
       let mate = state.entities.users[mateId];
@@ -39,7 +41,8 @@ const mapStateToProps = (state, ownProps) => {
     teammates,
     projects,
     description,
-    team
+    team,
+    currentUserId
   };
 };
 

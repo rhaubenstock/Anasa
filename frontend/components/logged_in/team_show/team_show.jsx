@@ -120,7 +120,7 @@ class TeamShow extends React.Component{
                         <Link to={`/users/${teammate.id}`} >
                             <i className="fa-solid fa-circle-user fa-4x"
                                 style={{color: teammate.color}}></i>
-                            <span className="teammate-email">{teammate.email}</span>
+                          <span className="teammate-email">{this.props.currentUserId === teammate.id ? "Me" : teammate.email}</span>
                         </Link>
                       </li>
                     )
