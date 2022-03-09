@@ -118,6 +118,11 @@ class TeamShow extends React.Component{
                     this.props.teammates.map(teammate => 
                       <li className="link TeamShow-Member" key={teammate.id} >
                         <Link to={`/users/${teammate.id}`} >
+                          {/* https://stackoverflow.com/questions/26516353/font-awesome-background-color */}
+                          {/* <span className="fa-stack" style={{"vertical-align": "top"}}>
+                            <i className="fas fa-circle fa-stack-2x"></i>
+                            <i className="fas fa-chevron-up fa-stack-1x fa-inverse"></i>
+                          </span> */}
                             <i className="fa-solid fa-circle-user fa-4x"
                                 style={{color: teammate.color}}></i>
                           <span className="teammate-email">{this.props.currentUserId === teammate.id ? "Me" : teammate.email}</span>
