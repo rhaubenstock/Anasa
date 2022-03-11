@@ -29,7 +29,7 @@ const mapStateToProps = (state, ownProps) => {
       if(mate && mate.id && mate.email) teammates.push(mate);
     });
   }
-  // change these into links to project pages
+ 
 
   const projects = team && team.projectIds ? team.projectIds.map(prjId => state.entities.projects[prjId] || {}) : [];
   
@@ -48,7 +48,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   const teamId = ownProps.match.params.teamId;
-  // have to make sure currentUser can't edit teams they aren't a part of
 
   return {
     thunkGetTeam: () => dispatch(getTeam(teamId)),
