@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=”en” prefix=”og: http://ogp.me/ns#" >
+<html lang=”en” prefix=”og: https://ogp.me/ns#" >
   <head>
     <title>Anasa</title>
     <%= csrf_meta_tags %>
@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
     <meta property='og:title' content='Anasa'/>
-    <meta property='og:image' content='anasa-screenshot.png'/>
+    <meta name="image" property='og:image' content=<%= image_url('anasa-screenshot.png')%>/>
     <meta property='og:description' content='Anasa Application'/>
     <meta property='og:url' content='//www.example.com/URL of the article'/>
     <meta name="author" content="Reed Haubenstock" />
