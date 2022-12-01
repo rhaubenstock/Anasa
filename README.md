@@ -5,6 +5,10 @@ Anasa is a website designed to help users keep track of the status and deadlines
 
 
 ### Current Features
-
+Teams
+Projects
+Tasks
 
 ### Features in Development
+Adding team members
+Profile Pictures
