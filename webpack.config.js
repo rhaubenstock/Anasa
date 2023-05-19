@@ -12,7 +12,7 @@ module.exports = {
         test: [/\.jsx?$/],
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
+        options: {
           presets: ['@babel/env', '@babel/react']
         }
       }
@@ -20,6 +20,6 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '*'],
+    extensions: ['.js', '.jsx'],
   }
 };
