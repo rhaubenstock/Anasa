@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  validates :name, null: false
+  validates :name, presence: true
 
   has_many :user_teams,
     primary_key: :id,
